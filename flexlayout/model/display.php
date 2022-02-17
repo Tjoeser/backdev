@@ -1,21 +1,21 @@
 <?php
 
-// function createList($arr, $classmain, $classdrop=""){
-//     $html = '<ul class="' . $classmain . '">';
-//     foreach ($arr as $key => $val) {
-//         if(is_array($val)){
-//             $html.= "<li><a href='#' onclick='myDropdown()'>" .$key. "</a><ul class='myDropdown' id='dropdown-content'>";
-//             foreach($val as $key => $value){
-//             $html .="<li><a href='".$value."' class='dropbtn'>".$key. "</a></li>";
-//         }
-//         $html.="</ul></li>";
-//     }else{
-//         $html .="<li><a href='".$val."'>".$key."</a></li>"; 
-//     }
-//     }
-//     $html .= '</ul>';
-//     return $html;
-// }
+function createList($arr, $classmain, $classdrop=""){
+    $html = '<ul class="' . $classmain . '">';
+    foreach ($arr as $key => $val) {
+        if(is_array($val)){
+            $html.= "<li><a href='#' onclick='myDropdown()'>" .$key. "</a><ul class='myDropdown' id='dropdown-content'>";
+            foreach($val as $key => $value){
+            $html .="<li><a href='".$value."' class='dropbtn'>".$key. "</a></li>";
+        }
+        $html.="</ul></li>";
+    }else{
+        $html .="<li><a href='".$val."'>".$key."</a></li>"; 
+    }
+    }
+    $html .= '</ul>';
+    return $html;
+}
 
 function createTable($entries)
 {
