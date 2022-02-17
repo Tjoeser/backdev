@@ -98,7 +98,7 @@ function createAssingnment(){
         $beschrijving = $_POST["beschrijving"];
         $talen = $_POST["talen"];
     
-        $afbeeldingenmap = "../media/";
+        $afbeeldingenmap = "../media/images/";
         $afbeelding = $afbeeldingenmap . basename($_FILES["fileToUpload"]["name"]);
         $uploadOk = 1;
     

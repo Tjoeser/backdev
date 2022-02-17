@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="media/styletables.css">
 <?php
 
 function createList($arr, $classmain, $classdrop=""){

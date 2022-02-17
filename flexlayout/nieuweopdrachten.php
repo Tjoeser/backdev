@@ -8,7 +8,7 @@
 include_once 'functions.php';
 include 'header.php';
 // include 'adminsidebar.php';
-checkAuth();
+// checkAuth();
 ?>
 
 <article>
