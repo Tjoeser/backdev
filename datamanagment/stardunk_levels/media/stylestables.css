@@ -1,0 +1,10 @@
+th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+th, td {
+  background-color: #ff9ff3;
+  padding-top: 15px;
+  border-radius:10px;
+  border-spacing: 300px;
+}

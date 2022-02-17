@@ -1,0 +1,12 @@
+11 {
+ float:left;
+}
+
+11 a {
+ display: block;
+ color: white;
+ text-align: center;
+ padding:1em;
+ text-decoration: none;
+ background-color: black;
+}

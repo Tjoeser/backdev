@@ -1,0 +1,187 @@
+
+body {
+    font-family: arial;
+    margin: 0;
+    padding: 0;
+    flex-direction: column;
+}
+
+header {
+    text-align: center;
+    padding-top: 1.5em;
+    background-color: rgb(128, 123, 123);
+}
+nav {
+    background-color: rgb(185, 178, 178);
+    flex: 1;
+    padding-top: 20px;
+}
+h1, p {
+    text-align: left;
+    padding: 16px;
+}
+article {
+    padding: 5px;
+    background-color: #f1f1f1;
+    flex: 3;
+    float: left;
+}
+footer {
+    background-color: rgb(128, 123, 123);
+    padding: 20px;
+    float: bottom;
+    text-align: center;
+}
+section {
+    display: flex;
+}
+@media (max-width: 600px) {
+    section {
+        flex-direction: column;
+    }
+}
+th:nth-child(even), td:nth-child(even) {
+    background-color: #b6dada
+}
+tr:hover {
+    background-color: rgb(15, 218, 208);
+}
+tr { border-bottom: 5px solid rgb(0, 119, 128);
+}
+
+li a {
+    display: block;
+    color: whitesmoke;
+    padding: 16px;
+    text-decoration: none;
+    text-align: center;
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: rgb(185, 178, 178);
+}
+li a:hover {
+    background-color: rgb(32, 32, 32);
+}
+
+/* start navbar */
+.navbar li {
+    float: left;
+    background-color: rgb(65, 62, 62);
+}
+.navbar ul {
+    background-color: rgb(65, 62, 62);
+}
+/* end navbar */
+th:nth-child(even), td:nth-child(even) {
+    background-color: #b6dada
+}
+tr:hover {
+    background-color: rgb(15, 218, 208);
+}
+tr { border-bottom: 5px solid rgb(0, 119, 128);
+}
+
+li a {
+    display: block;
+    color: whitesmoke;
+    text-align: center;
+    padding: 16px;
+    text-decoration: none;
+    float: left;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333333;
+}
+li a:hover {
+    background-color: #111111
+}
+p {
+    padding: 16px;
+}
+
+th, td {
+    border: 1px solid #000;
+    border-collapse: collapse;
+
+}
+th, td {
+    background-color: #84b8e9;
+    border-radius: 10px;
+    padding: 15px;
+}
+th, td {
+    border: 1px solid #000;
+    border-collapse: collapse;
+}
+th, td {
+    background-color: #3591e7;
+    border-radius: 10px;
+    padding: 15px;
+}
+tr:nth-child(1) {
+    font-weight: bold;
+    background-color: rgb(0, 0, 0);
+}
+
+.required {
+    color: red;
+}
+
+.disabled {
+    color: #ccc;
+    border:0.5px solid #ccc;
+}
+
+.msg {
+    background-color: gray;
+    border-radius: 0.3rem;
+    padding: 1em;
+}
+
+.msg :hover {
+    background-color: grey;
+}
+
+input[type=submit]:hover {
+    background-color: #0e2d6e;
+}
+
+input[type=submit] {
+    background-color: #76acdf;
+}
+
+/* start skills */
+.container {
+    width: 100%;
+    background-color: #ddd;
+}
+
+.skills {
+    text-align: right;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: white;
+}
+
+
+.skillbackdrop {
+    width: 100%;
+    background-color: #ddd;
+}
+
+/* end skills */
+
+/* start styling opdrachten form */
+
+label {
+    font-weight: bold;
+}

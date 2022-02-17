@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="media/stylesposition.css">
+</head>
+<body>
+
+<h2>Position Assignment</h2>
+
+
+<div class="static">
+    <b>Static</b><br>
+    Deze position zorgt er voor dat waar je dit ook plaatst hij blijft bij de natuurlijke positie staan waar die hoort te komen volgens de pagina.<br>
+    Left of right aangeven negeert hij gewoon.
+</div>
+
+<br>
+<br>
+
+<div class="sticky">
+    <b>Sticky</b><br>
+    Dit is de sticky position deze houd een item relative totdat de scroll het item inhaalt dan veranderd hij de position naar fixed.
+</div>
+
+<div class="relative">
+    <b>Relative</b><br>
+    Deze position geef je een extra waarde mee zoals left, right, top of bottum.<br>
+    Dit zorgt er voor dat hij afstand neemt van een aantal pixels van de waarde die je mee geeft.<br> 
+    bijvoorbeeld: Left:30px; zorgt er voor dat hij 30 px naar rechts beweegt.<br>
+    Als je deze waarde niet meegeeft negeert hij het gewoon en plaatst die zichzelf in de natuurlijke flow van de pagina.
+</div>
+
+<div class="fixed">
+    <b>Fixed</b><br>
+    Deze position is verbonden met je viewport.<br>
+    Dus waar jij kijkt blijft dit item ook staan als een vlek op je scherm.<br>
+    Deze geef je ook weer Left, Right, Top en Bottum values en deze gebruikt hij om te bepalen waar in je viewport hij blijft staan.<br>
+    Als je deze geen values geeft dan blijft hij gewoon plakken aan de viewport maar dan 10 pixels van de linker wand en boven wand.
+</div>
+
+<div class="relative2">
+    <b>Relative</b><br>
+    Deze element is relative om aan te duiden wat de position: absolute; doet.
+    <div class="absolute">
+        <b>Absolute</b><br>
+        De absolute value zorgt er voor dat het element zichzelf nest in de dichtsbeizijnde item.<br>
+        Verder geef je nog Left, Right, Top of Bottum values om te bepalen waar dit item zich nestelt in de dichtsbeizijnde element</div>
+</div>
+
+<div class="container">
+    <img src="media/curby.jpg" width="1000" height="300">
+    <div class="topleft">Door de texten een absolute position te geven en de container relative position te maken</div>
+    <div class="topright">blijven de texten mooi in de foto zitten</div>
+    <div class="center">Want absolutes passen zich altijd aan om te zitten in de relatives.</div>
+    <div class="bottomleft">Bottom left.</div>
+    <div class="bottomright">Bottom right.</div>
+</div>
+
+</body>
+</html>
+
+
