@@ -18,14 +18,14 @@
 <body>
 <h2>TITLE HEADING</h2>
     <h5>Title description, Dec 7, 2017</h5>
-    
+
     <?php
     require_once ("model/Products.php");
     require_once ("../../flexlayout/model/display.php");
     $list = new Products(); 
     $res = $list->listProducts();
     $res1 = createTable2($res);
-    return $res1;
+    var_dump ($res1);
     ?>
 
     <div class="fakeimg" style="height:200px;">Image</div>
