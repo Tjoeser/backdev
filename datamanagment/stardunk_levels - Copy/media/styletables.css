@@ -4,7 +4,7 @@ table {
     border-style: double;
     border-color: darkgray;
     border-width:6px;
-    background-color: #F27A02;
+    background-color: #f27a02;
 }
 
 th, td {
@@ -14,7 +14,7 @@ th, td {
 }
 
 th {
-    background-color: #f27a02;
+    background-color: #333;
     color: white;
 }
 
