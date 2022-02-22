@@ -43,16 +43,7 @@ function createTable2($entries/*, $ftable*/)
             $html .= "<th>" . $val . "</th>";
         }
         $html .= "</tr>";
-        // echo "createtable debug result:" . $key . "<br/>";
     }
-
-    // foreach ($entries as $row) {
-    //     $html .= "<tr>";
-    //      foreach ($row as $key => $val) {
-    //          $html .= "<td>" . $val . "</td>";
-    //      }
-    //      $html .= "</tr>";
-    // };
     $html .= "</table>";
     return $html;
 }

@@ -4,6 +4,7 @@ table {
     border-style: double;
     border-color: darkgray;
     border-width:6px;
+    background-color: #F27A02;
 }
 
 th, td {
@@ -12,15 +13,13 @@ th, td {
     border-style: groove;
 }
 
-tr:nth-child(even){background-color: #f2f2f2}
-
 th {
-    background-color: #63cdda;
+    background-color: #f27a02;
     color: white;
 }
 
 .button {
-    background-color: #008CFF;
+    background-color: #333;
     border: none;
     color: white;
     padding: 15px;
