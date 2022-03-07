@@ -40,7 +40,3 @@ class Output{
         return $html;
     }
 }
-
-    function createList(){
-
-    }

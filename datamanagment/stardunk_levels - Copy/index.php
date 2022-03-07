@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="media/styletables.css">
 <?php
     require_once "header.php";
     require_once "model/DataHandler.php";
@@ -7,11 +8,12 @@
 <body>
 <h2>TITLE HEADING</h2>
     <h5>Title description, Dec 7, 2017</h5>
+    <button class="button">Create</button>
     <?php    
     require_once ("model/Products.php");
     require_once ("model/Output.php");
-    require_once ("../../flexlayout/model/display.php");
-    $list = new Products(); 
+    //require_once ("../../flexlayout/model/display.php");
+    $products = new Products(); 
     $output = new Output();
 
 
