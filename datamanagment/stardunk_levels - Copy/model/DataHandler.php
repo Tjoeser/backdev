@@ -35,29 +35,24 @@ class DataHandler{
 
 	public function readData($sql){
 		return $this->query($sql);
-		//return $this->dbh->query($sql,PDO::FETCH_ASSOC);
+		// return $this->dbh->query($sql,PDO::FETCH_ASSOC);
 	}
-
 	public function readsData($sql){
 		// $this->query($sql);
 		return $this->dbh->query($sql,PDO::FETCH_ASSOC);
 	}
-
 	public function updateData($sql){
 		$this->query($sql);
 		return $this->sth->rowCount();
 	}
-
 	public function deleteData($sql){
 		$sth = $this->dbh->query($sql);
 		return $sth->rowCount();
 	}
-
 	public function query($query){  
 		$this->sth = $this->dbh->prepare($query);
 		return $this->sth->execute();    
 	}
-
 	public function lastInsertId(){  
 		return $this->dbh->lastInsertId();  
 	}
