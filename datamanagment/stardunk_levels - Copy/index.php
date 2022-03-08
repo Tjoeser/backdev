@@ -1,7 +1,6 @@
 <?php
 require_once('header.php');
 ?>
-<link rel="stylesheet" href="media/styletables.css">
 <h2>TITLE HEADING</h2>
 <h5>Title description, Dec 7, 2017</h5>
 <a class="button" href="./index.php?op=create">Create new product</a>
@@ -19,28 +18,23 @@ switch ($op) {
             echo'test';
             $res=$products->createProduct();
             echo $output->createTable($res, "");
-         }else{
+        }else{
         $html = "";
         $html .= "<form action=\"index.php?op=create&flag=1\" method=\"post\">";
         $html .= "<label for=\"product_type_code\">Product type code:</label><br>";
         $html .= "<input type=\"text\" id=\"product_type_code\" name=\"product_type_code\" value=\"\"><br>";
-
         $html .= "<label for=\"supplier_id\">Supplier id:</label><br>";
         $html .= "<input type=\"text\" id=\"supplier_id\" name=\"supplier_id\" value=\"\"><br>";
-
         $html .= "<label for=\"product_name\">Product name:</label><br>";
         $html .= "<input type=\"text\" id=\"product_name\" name=\"product_name\" value=\"\"><br>";
-
         $html .= "<label for=\"product_price\">Product price:</label><br>";
         $html .= "<input type=\"text\" id=\"product_price\" name=\"product_price\" value=\"\"><br>";
-
         $html .= "<label for=\"other_product_details\">Other product details:</label><br>";
         $html .= "<input type=\"text\" id=\"other_product_details\" name=\"other_product_details\" value=\"\"><br><br>";
-
         $html .= "<input type=\"submit\" name=\"submit\"value=\"create\">";
         $html .= "</form>";
         echo $html;
-         }
+        }
         break;
     case 'read':
         $id = $_GET['id'];
