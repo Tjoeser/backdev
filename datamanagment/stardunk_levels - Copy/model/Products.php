@@ -38,12 +38,18 @@ class Products
 
         }
     }
-    function readProduct($id)
-    {
-    $sql = "SELECT product_name, REPLACE(product_price, '.', ',')product_price, other_product_details FROM products WHERE product_id=$id";
-    $result = $this->datahandler->readsData($sql);
-    return $result;  
+    function readMyFile($bestandsnaam, $foutmelding){
+        // Code
+        // Handle
+        $filehandle = fopen($bestandsnaam, "r") or die($foutmelding);
+        // Inlezen
+        $inhoud = fread($filehandle, filesize($bestandsnaam));
+        $uit = "disabled";
+        fclose($filehandle);
+        // Return
+        return [$bestandsnaam, $foutmelding, $inhoud, $uit];
     }
+    
     function listProduct()
     {
         $sql = "SELECT 

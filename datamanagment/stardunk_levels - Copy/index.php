@@ -43,13 +43,12 @@ switch ($op) {
         break;
 
     case 'update':
-        
+        $arr[] = readMyFile($bestandsnaam, $_POST["foutmelding"]);
+        $msg = showForm($arr[0][0], $arr[0][1], $arr[0][2], $arr[0][3]);
         break;
-
     case 'delete':
-        
+        $msg = deleteFile($bestandsnaam);
         break;
-
     default:
     $res = $products->listProduct();
     echo $output->createTable($res, "");
