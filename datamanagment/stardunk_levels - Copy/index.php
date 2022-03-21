@@ -6,8 +6,8 @@ require_once('header.php');
 <a class="button" href="./index.php?op=create"><i class="fa-regular fa-square-plus"></i>Create new product</a>
 <a type="text" placeholder="Search..."><i class="fa-solid fa-magnifying-glass"></i></a>
 <?php
-require_once('C:\xampp\htdocs\backdev\datamanagment\stardunk_levels - Copy\model\Products.php');
-require_once('C:\xampp\htdocs\backdev\datamanagment\stardunk_levels - Copy\model\Output.php');
+require_once('model/Products.php');
+require_once('model/Output.php');
 $products = new Products();
 $output = new Output();
 
@@ -39,7 +39,7 @@ switch ($op) {
         break;
     case 'read':
         $id = $_GET['id'];
-        $res = $products->readProduct($id);
+        $res = $products->readsData($id);
         echo $output->createlist($res);
         break;
 
