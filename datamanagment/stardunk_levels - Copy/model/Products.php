@@ -14,7 +14,6 @@ class Products
     }
     function createProduct()
     {
-        echo"ja ik ben hier";
         $product_code = $_POST["product_type_code"];
         $supplier_id = $_POST["supplier_id"];
         $productname = $_POST["product_name"];
@@ -57,12 +56,12 @@ class Products
         product_type_code,
         supplier_id,
         product_name,
-        REPLACE(product_price, '.', ',')product_price,
+        CONCAT('€',REPLACE(product_price, '.', ','))product_price,
         other_product_details FROM products";
         $result = $this->datahandler->readsData($sql);
         //$result->setFetchMode(PDO::FETCH_ASSOC);
         $res = $result->fetchAll();
-       return $res;
+        return $res;
     }
     
     function updateProduct()

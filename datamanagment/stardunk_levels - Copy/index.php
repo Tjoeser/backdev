@@ -4,6 +4,7 @@ require_once('header.php');
 <h2>TITLE HEADING</h2>
 <h5>Title description, Dec 7, 2017</h5>
 <a class="button" href="./index.php?op=create"><i class="fa-regular fa-square-plus"></i>Create new product</a>
+<a type="text" placeholder="Search..."><i class="fa-solid fa-magnifying-glass"></i></a>
 <?php
 require_once('C:\xampp\htdocs\backdev\datamanagment\stardunk_levels - Copy\model\Products.php');
 require_once('C:\xampp\htdocs\backdev\datamanagment\stardunk_levels - Copy\model\Output.php');
