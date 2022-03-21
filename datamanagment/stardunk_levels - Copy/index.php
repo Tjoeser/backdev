@@ -39,7 +39,7 @@ switch ($op) {
         break;
     case 'read':
         $id = $_GET['id'];
-        $res = $products->readsData($id);
+        $res = $products->readProduct($id);
         echo $output->createlist($res);
         break;
 
