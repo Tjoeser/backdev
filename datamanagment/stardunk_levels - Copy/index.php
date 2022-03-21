@@ -3,10 +3,10 @@ require_once('header.php');
 ?>
 <h2>TITLE HEADING</h2>
 <h5>Title description, Dec 7, 2017</h5>
-<a class="button" href="./index.php?op=create">Create new product</a>
+<a class="button" href="./index.php?op=create"><i class="fa-regular fa-square-plus"></i>Create new product</a>
 <?php
-require_once('./model/Products.php');
-require_once('./model/Output.php');
+require_once('C:\xampp\htdocs\backdev\datamanagment\stardunk_levels - Copy\model\Products.php');
+require_once('C:\xampp\htdocs\backdev\datamanagment\stardunk_levels - Copy\model\Output.php');
 $products = new Products();
 $output = new Output();
 
@@ -32,7 +32,7 @@ switch ($op) {
         $html .= "<label for=\"other_product_details\">Other product details:</label><br>";
         $html .= "<input type=\"text\" id=\"other_product_details\" name=\"other_product_details\" value=\"\"><br><br>";
         $html .= "<input type=\"submit\" name=\"submit\"value=\"create\">";
-        $html .= "</form>";
+        $html .=     "</form>";
         echo $html;
         }
         break;
