@@ -3,10 +3,10 @@ require_once('header.php');
 ?>
 <h2>TITLE HEADING</h2>
 <h5>Title description, Dec 7, 2017</h5>
-<a class="button" href="./index.php?op=create"><i class="fa-regular fa-square-plus"></i>Create new product</a>
+<a class="button" href="./index.php?op=create">Create new product</a>
 <?php
-require_once('C:\xampp\htdocs\backdev\datamanagment\stardunk_levels - Copy\model\Products.php');
-require_once('C:\xampp\htdocs\backdev\datamanagment\stardunk_levels - Copy\model\Output.php');
+require_once('model/Products.php');
+require_once('model/Output.php');
 $products = new Products();
 $output = new Output();
 
@@ -38,7 +38,7 @@ switch ($op) {
         break;
     case 'read':
         $id = $_GET['id'];
-        $res = $products->readProduct($id);
+        $res = $products->readsData($id);
         echo $output->createlist($res);
         break;
 
