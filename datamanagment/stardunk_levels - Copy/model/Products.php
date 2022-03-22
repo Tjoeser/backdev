@@ -61,14 +61,25 @@ class Products
         $result = $this->datahandler->readsData($sql);
         //$result->setFetchMode(PDO::FETCH_ASSOC);
         $res = $result->fetchAll();
+        echo "<a href='index.php'><i class='fa-solid fa-house'></i></a>";
         return $res;
     }
     
     function updateProduct()
     {
+        echo "<a href='index.php'><i class='fa-solid fa-house'></i></a>";
     }
     function deleteproduct()
     {
+        echo "<a href='index.php'><i class='fa-solid fa-house'></i></a>";
+    }
+    function searchProducts($term)
+    {   
+        $sql = "SELECT * FROM products WHERE product_name LIKE '%$term%'";
+        $result = $this->datahandler->readsData($sql);
+        var_dump($result);
+
+        echo "<a href='index.php'><i class='fa-solid fa-house'></i></a>";
     }
 }
 

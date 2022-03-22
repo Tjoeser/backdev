@@ -4,7 +4,13 @@ require_once('header.php');
 <h2>TITLE HEADING</h2>
 <h5>Title description, Dec 7, 2017</h5>
 <a class="button" href="./index.php?op=create"><i class="fa-regular fa-square-plus"></i>Create new product</a>
-<a type="text" placeholder="Search..."><i class="fa-solid fa-magnifying-glass"></i></a>
+
+<form method="POST" action="index.php?op=search">
+    <input type="text" id="searchterm" name="searchterm" value="">
+    <input type="submit" value="Submit"><i class="fa-solid fa-magnifying-glass"></i>
+</form> 
+
+
 <?php
 require_once('model/Products.php');
 require_once('model/Output.php');
@@ -49,6 +55,9 @@ switch ($op) {
         break;
     case 'delete':
         $msg = deleteFile($bestandsnaam);
+        break;
+    case 'search':
+        $products->searchProducts($_POST['searchterm']);
         break;
     default:
     $res = $products->listProduct();
