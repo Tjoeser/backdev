@@ -77,7 +77,8 @@ class Products
     {   
         $sql = "SELECT * FROM products WHERE product_name LIKE '%$term%'";
         $result = $this->datahandler->readsData($sql);
-        var_dump($result);
+        $res = $result->fetchAll();
+        return $res;
 
         echo "<a href='index.php'><i class='fa-solid fa-house'></i></a>";
     }

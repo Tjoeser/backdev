@@ -57,7 +57,8 @@ switch ($op) {
         $msg = deleteFile($bestandsnaam);
         break;
     case 'search':
-        $products->searchProducts($_POST['searchterm']);
+        $res = $products->searchProducts($_POST['searchterm']);
+        echo $output->createTable($res, "");
         break;
     default:
     $res = $products->listProduct();
