@@ -56,5 +56,14 @@ class DataHandler{
 	public function lastInsertId(){  
 		return $this->dbh->lastInsertId();  
 	}
+	public function countPages($sql){
+        $item_per_page = 5;
+        $results = $this->dbh->query($sql);
+        $get_total_rows = $results->fetch();
+
+        // breaking total records into pages
+        $pages = ceil($get_total_rows[0] / $item_per_page);
+        return $pages;
+    }
 }
 ?>

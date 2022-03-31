@@ -49,7 +49,6 @@ switch ($op) {
         $res = $products->readsData($id);
         echo $output->createlist($res);
         break;
-
     case 'update':
         $arr[] = readMyFile($bestandsnaam, $_POST["foutmelding"]);
         $msg = showForm($arr[0][0], $arr[0][1], $arr[0][2], $arr[0][3]);
@@ -61,10 +60,21 @@ switch ($op) {
         $res = $products->searchProducts($_POST['searchterm']);
         echo $output->createTable($res, "");
         break;
-    default:
-    $res = $products->listProduct();
-    echo $output->createTable($res, "");
+    case 'readpage':
+        collectReadPagedProducts($_GET['p']);
         break;
+    default:
+        echo collectReadPagedProducts('1');
+        break;
+}
+
+function collectReadPagedProducts($p)
+{
+    global $products, $output;
+    $res = $products->listProduct($p);
+    echo $output->createTable($res[0], "");
+    echo $output->createPageButton($res[1]);
+    echo "<br>Showing page {$p} of all products";
 }
 
 ?>
