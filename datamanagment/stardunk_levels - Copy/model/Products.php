@@ -49,29 +49,36 @@ class Products
         return [$bestandsnaam, $foutmelding, $inhoud, $uit];
     }
     
-    function listProduct()
+    function listProduct($p = 1)
     {
+        $item_per_page = 5;
+        $position =(($p - 1) * $item_per_page);
+
         $sql = "SELECT 
         product_id,
         product_type_code,
         supplier_id,
         product_name,
-        CONCAT('€',REPLACE(product_price, '.', ','))product_price,
-        other_product_details FROM products";
+        CONCAT('€ ', REPLACE(product_price, '.', ','))product_price,
+        other_product_details 
+        FROM products
+        LIMIT $position,$item_per_page";
         $result = $this->datahandler->readsData($sql);
-        //$result->setFetchMode(PDO::FETCH_ASSOC);
-        $res = $result->fetchAll();
-        echo "<a href='index.php'><i class='fa-solid fa-house'></i></a>";
-        return $res;
+        $pages = $this->datahandler->countPages('SELECT COUNT(*) FROM products');
+        return array($result, $pages);
     }
     
-    function updateProduct()
+    function updateProduct($colum, $value, $id)
     {
-        echo "<a href='index.php'><i class='fa-solid fa-house'></i></a>";
+        $sql = "UPDATE products SET $colum='$value' WHERE product_id=$id";
+        $result = $this->datahandler->updateData($sql);
+        return	$result;
     }
-    function deleteproduct()
+    function deleteproduct($id)
     {
-        echo "<a href='index.php'><i class='fa-solid fa-house'></i></a>";
+        $sql = "DELETE  FROM products WHERE product_id=$id";
+        $result = $this->datahandler->deleteData($sql);
+        return $result;
     }
     function searchProducts($term)
     {   
