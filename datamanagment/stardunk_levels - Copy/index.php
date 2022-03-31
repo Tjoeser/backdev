@@ -14,6 +14,7 @@ require_once('header.php');
 <?php
 require_once('model/Products.php');
 require_once('model/Output.php');
+
 $products = new Products();
 $output = new Output();
 
@@ -45,7 +46,7 @@ switch ($op) {
         break;
     case 'read':
         $id = $_GET['id'];
-        $res = $products->listProduct($id, "nee");
+        $res = $products->readsData($id);
         echo $output->createlist($res);
         break;
 
