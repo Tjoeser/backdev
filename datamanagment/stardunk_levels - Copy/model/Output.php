@@ -52,13 +52,14 @@ class Output
         $html .= '</ul>';
         return $html;
     }
-    public function createPageButton($pages){
-        $html="";
-        for($i = 1; $i <= $pages; $i++){
-            $html.="<a class='button'href=index.php?page=" .$i. ">" .$i. "<a>&nbsp;";
+    public function createPageButton($pages)
+        {
+            $html = "";
+            for ($i = 1; $i <= $pages; $i++) {
+                $html .= "<a class='button' href='./index.php?op=readpage&p=$i'>$i</a>";
+            }
+            return $html;
         }
-        return $html;
-    }
 
 
 }

@@ -64,18 +64,19 @@ switch ($op) {
         collectReadPagedProducts($_GET['p']);
         break;
     default:
-        echo collectReadPagedProducts('1');
+        collectReadPagedProducts('1');
         break;
 }
 
 function collectReadPagedProducts($p)
 {
     global $products, $output;
-    $res = $products->listProduct($p);
+    $res = $products->ListProduct($p);
     echo $output->createTable($res[0], "");
     echo $output->createPageButton($res[1]);
     echo "<br>Showing page {$p} of all products";
 }
+
 
 ?>
 <div class="fakeimg" style="height:200px;">Image</div>
