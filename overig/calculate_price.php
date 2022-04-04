@@ -23,6 +23,8 @@
 </form>
 
 <?php
+date_default_timezone_set("Europe/Amsterdam");
+// var_dump($_POST);
 //formulier velden in ontvangst nemen
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // collect value of input field
@@ -44,8 +46,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }else{
         echo "$date<br>";
     }
+} 
+
+$morning_time = "8:00";
+$night_time = "18:00";
+
+if(($time <= $morning_time) and ($time >= $night_time)){
+    $tarief = 0.45;
+}else{
+    $tarief = 0.25;
 }
 
+// $totalkm = $km * 1
+
+echo $tarief;
 
 
 ?>
