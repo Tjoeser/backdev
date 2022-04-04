@@ -7,7 +7,8 @@ require_once('header.php');
 
 <form method="POST" action="index.php?op=search">
     <input type="text" id="searchterm" name="searchterm" value="">
-    <input class="button" type="submit" value="Submit"><i class="fa-solid fa-magnifying-glass"></i>
+    <input class="button" type="submit" value="Search"><i class="fa-solid fa-magnifying-glass"></i>
+    <button type="submit" class="button" formaction="index.php">Home</button>
 </form> 
 
 
@@ -39,7 +40,7 @@ switch ($op) {
         $html .= "<input type=\"text\" id=\"product_price\" name=\"product_price\" value=\"\"><br>";
         $html .= "<label for=\"other_product_details\">Other product details:</label><br>";
         $html .= "<input type=\"text\" id=\"other_product_details\" name=\"other_product_details\" value=\"\"><br><br>";
-        $html .= "<input type=\"submit\" name=\"submit\"value=\"create\">";
+        $html .= "<input class=\"button\" type=\"submit\" name=\"submit\"value=\"create\">";
         $html .=     "</form>";
         echo $html;
         }
@@ -50,8 +51,8 @@ switch ($op) {
         echo $output->createlist($res);
         break;
     case 'update':
-        $arr[] = readMyFile($bestandsnaam, $_POST["foutmelding"]);
-        $msg = showForm($arr[0][0], $arr[0][1], $arr[0][2], $arr[0][3]);
+        //call update functie
+        $products->updateProduct($_REQUEST['id']);
         break;
     case 'delete':
         $id = $_GET['id'];
