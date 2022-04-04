@@ -37,6 +37,14 @@ class Products
 
         }
     }
+    function readProduct($id)
+    {
+    $sql = "SELECT product_id,product_type_code,supplier_id, product_name, CONCAT('€ ', REPLACE(product_price, '.', ','))product_price, other_product_details FROM products WHERE product_id=$id";
+    $result = $this->datahandler->readsData($sql);
+    $res = $result->fetchAll();
+    return $res;  
+    }
+    
     function readMyFile($bestandsnaam, $foutmelding){
         // Code
         // Handle

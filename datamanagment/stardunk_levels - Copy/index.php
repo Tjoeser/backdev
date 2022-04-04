@@ -7,7 +7,7 @@ require_once('header.php');
 
 <form method="POST" action="index.php?op=search">
     <input type="text" id="searchterm" name="searchterm" value="">
-    <input type="submit" value="Submit"><i class="fa-solid fa-magnifying-glass"></i>
+    <input class="button" type="submit" value="Submit"><i class="fa-solid fa-magnifying-glass"></i>
 </form> 
 
 
@@ -46,7 +46,7 @@ switch ($op) {
         break;
     case 'read':
         $id = $_GET['id'];
-        $res = $products->readsData($id);
+        $res = $products->readProduct($id);
         echo $output->createlist($res);
         break;
     case 'update':
@@ -54,7 +54,9 @@ switch ($op) {
         $msg = showForm($arr[0][0], $arr[0][1], $arr[0][2], $arr[0][3]);
         break;
     case 'delete':
-        $msg = deleteFile($bestandsnaam);
+        $id = $_GET['id'];
+        $res = $products->deleteproduct($id);
+        return $res;
         break;
     case 'search':
         $res = $products->searchProducts($_POST['searchterm']);
