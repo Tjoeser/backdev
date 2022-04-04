@@ -51,15 +51,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 $morning_time = "8:00";
 $night_time = "18:00";
 
-if(($time <= $morning_time) and ($time >= $night_time)){
+if ($time <= $morning_time){
     $tarief = 0.45;
 }else{
     $tarief = 0.25;
-}
+} echo $tarief;
 
-// $totalkm = $km * 1
+// echo $time;
+// // $totalkm = $km * 1
 
-echo $tarief;
+// echo $tarief;
 
 
 ?>
