@@ -120,7 +120,7 @@ class Products
     
     function readUpdateProduct($id)
         {
-            $sql = "SELECT supplier_id, product_type_code, product_name, other_product_details, product_price FROM products WHERE product_id=$id";
+            $sql = "SELECT supplier_id, product_type_code, product_name, other_product_details, CONCAT('€ ',REPLACE(product_price, '.', ','))product_price FROM products WHERE product_id=$id";
             $result = $this->datahandler->readsData($sql);
             $res = $result->fetchAll();
             return $res;
