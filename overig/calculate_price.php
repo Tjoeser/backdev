@@ -8,9 +8,6 @@
     <input type="text" name="km" placeholder="Aantal kilometer...">
     <br>
     <br>
-    <input type="time" name="time" placeholder="Op welke tijd vertrekt u...">
-    <br>
-    <br>
     <label for="date">Datum dat u vertrekt:</label>
     <input type="datetime-local" name="date">
     <br>
@@ -28,9 +25,10 @@ if (isset($_POST['submit'])){
     $laagtarief = 0.25;
     $hoogtarief = 0.45;
     $weekendtarief = 1.15;
+    $tarief = "";
 
-    $morning_time = 8;
-    $night_time = 18;
+    $morning_time = "8:00:00";
+    $night_time = "18:00:00";
     $startweekendtijd = 22;
     $eindweekendtijd = 7;
 
@@ -40,19 +38,21 @@ if (isset($_POST['submit'])){
     $total = "";
 
     $km = $_POST['km'];
-    $time = $_POST['time'];
     $date = $_POST['date'];
+    $time = $date = date("H:i:s",strtotime($date));
 
     $subtotaalkm = $km * $kmtarief;
+
+    if ($time <= $morning_time and $time >= $night_time){
+        echo $tarief = $laagtarief;
+    } else{ 
+        $tarief = $hoogtarief; } 
+
     var_dump($subtotaalkm);
-
-    // $totalminutes = $subtotaalkm 
-
-    if ($time <= $morning_time){
-        $tarief = $hoogtarief;
-    }else{
-        $tarief = $laagtarief;
-    } echo $tarief;
+    echo "<br>";
+    echo $tarief;
+    echo "<br>";
+    echo $time;
 }
 
 
@@ -78,10 +78,10 @@ if (isset($_POST['submit'])){
 
 
 
-echo $time;
-// $totalkm = $km * 1
+// echo $time;
+// // $totalkm = $km * 1
 
-echo $tarief;
+// echo $tarief;
 
 
 ?>
