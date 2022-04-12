@@ -2,27 +2,11 @@
 
 class DataHandler
 {
-    private $host;
-    private $dbdriver;
-    private $dbname;
-    private $username;
-    private $password;
-
-    public function __construct($host, $dbdriver, $dbname, $username, $password)
+    public function __construct()
     {
-        $this->host = $host;
-        $this->dbdriver = $dbdriver;
-        $this->dbname = $dbname;
-        $this->username = $username;
-        $this->password = $password;
-
-        try {
-            $this->dbh = new PDO("$this->dbdriver:host=$this->host;dbname=$this->dbname", $this->username, $this->password);
-            $this->dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            return true;
-        } catch (PDOException $e) {
-            echo "Connection with " . $this->dbdriver . " failed: " . $e->getMessage();
-        }
+        // $this->ContactsLogic = new ContactsLogic();
+        // $this->Output = new Output();
+        // $this->DataHandler = new DataHandler();
     }
 
     public function __destruct()
@@ -80,6 +64,16 @@ class DataHandler
         // Breaking total records into pages
         $pages = ceil($get_total_rows[0] / $item_per_page);
         return $pages;
+    }
+
+    function listContacts($p = 1)
+    {
+        $item_per_page = 5;
+        $position =(($p - 1) * $item_per_page);
+
+        $sql = "SELECT * FROM contacts";
+        $result = $this->datahandler->readsData($sql);
+        return $result;
     }
 }
 
