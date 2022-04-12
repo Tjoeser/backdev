@@ -1,5 +1,5 @@
 <?php
-require_once 'model/ContactsLogic.php';
+require_once '../model/ContactsLogic.php';
 
 class ContactsController
 {
