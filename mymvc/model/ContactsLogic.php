@@ -23,9 +23,16 @@ class ContactsLogic
         // iets
     }
 
-    public function readContacts()
+    public function readAllContacts()
     {
         try {
+            
+                $sql = "SELECT * FROM contacts";
+                $result = $this->Datahandler->readsData($sql);
+                //$result->setFetchMode(PDO::FETCH_ASSOC);
+                $res = $result->fetchAll();
+               return $res;
+            
         } catch (Exception $e) {
             throw $e;
         }
@@ -40,3 +47,4 @@ class ContactsLogic
         //Code
     }
 }
+
