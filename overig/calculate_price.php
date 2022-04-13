@@ -5,7 +5,7 @@
 <body>
 
 <form method="post" action="<?php $_SERVER['PHP_SELF']; ?>">
-    <input type="text" name="km" placeholder="Aantal kilometer...">
+    <input type="text" name="km" placeholder="Aantal kilometers...">
     <br>
     <br>
     <label for="date">Datum dat u vertrekt:</label>
