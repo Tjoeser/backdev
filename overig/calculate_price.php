@@ -8,8 +8,8 @@
     <input type="text" name="km" placeholder="Aantal kilometers...">
     <br>
     <br>
-    <label for="date">Datum dat u vertrekt:</label>
-    <input type="datetime-local" name="date">
+    <label for="leave_date">Datum dat u vertrekt:</label>
+    <input type="datetime-local" name="leave_date">
     <br>
     <br>
     <input class="button" type="submit" name="submit" value="Submit">
@@ -19,7 +19,12 @@
 date_default_timezone_set("Europe/Amsterdam");
 
 if (isset($_POST['submit'])){
+    calculateTaxiPrice($km = $_POST['km'], $leave_date = $_POST['leave_date']);
+}
+
+function calculateTaxiPrice($km, $leave_date){
     $speedkm = 60;
+    $minpu = 60;
 
     $kmtarief= 1;
     $laagtarief = 0.25;
@@ -38,51 +43,40 @@ if (isset($_POST['submit'])){
     $total = "";
 
     $km = $_POST['km'];
-    $date = $_POST['date'];
-    $time = $date = date("H:i:s",strtotime($date));
+    $leave_date = $_POST['leave_date'];
+    $time = (explode("T",$_POST['leave_date']));
 
     $subtotaalkm = $km * $kmtarief;
 
-    if ($time <= $morning_time and $time >= $night_time){
-        echo $tarief = $laagtarief;
-    } else{ 
-        $tarief = $hoogtarief; } 
+    $ritminuten =  $km / $speedkm * $minpu;
 
-    var_dump($subtotaalkm);
+    // if ($time <= $morning_time || $time >= $night_time){
+    //     echo $tarief = $laagtarief;
+    // } else{ 
+    //     $tarief = $hoogtarief; } 
+
+
+    if ($time > $morning_time && $time < $night_time){
+        $tarief = $laagtarief;
+        $subtotaalminuten = $tarief * $ritminuten;
+    } else{
+        echo $tarief = $hoogtarief;
+        $subtotaalminuten = $tarief * $ritminuten;
+    } 
+
+    echo $subtotaalminuten;
+    echo "<br>";
+    echo $subtotaalkm;
     echo "<br>";
     echo $tarief;
     echo "<br>";
-    echo $time;
+    echo $time['1'];
+    echo "<br>";
+    echo strtotime("now"), "\n";
+    echo "<br>";
+    echo strtotime("10 September 2000"), "\n";
+    echo "<br>";
 }
-
-
-
-
-// if (empty($km)) {
-//     echo "km is leeg<br>";
-// } else {
-//     echo "$km km<br>";
-// }
-
-// if(empty($time)){
-//     echo"Tijd is leeg<br>";
-// }else{
-//     echo "$time<br>";
-// }
-// $date = $_POST['date'];
-// if(empty($date)){
-//     echo "Datum is leeg<br>";
-// }else{
-//     echo "$date<br>";
-// }
-
-
-
-// echo $time;
-// // $totalkm = $km * 1
-
-// echo $tarief;
-
 
 ?>
 
