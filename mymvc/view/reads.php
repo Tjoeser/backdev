@@ -1,4 +1,5 @@
 <?php
+<<<<<<< HEAD
 // require 'header.php';
 var_dump($contacts);
 // require 'footer.php';
@@ -145,3 +146,8 @@ class Reads
 }
 
 ?>
+=======
+require 'header.php';
+echo $contacts;
+require 'footer.php';
+>>>>>>> 0686a6ef615c83d56140397c14fb3b1c6de6d919

@@ -25,7 +25,7 @@ class ContactsLogic
         return $result;
     }
 
-    public function readContacts()
+    public function readAllContacts()
     {
         $sql = 'SELECT * FROM contacts';
         $result = $this->DataHandler->readData($sql);
@@ -41,3 +41,4 @@ class ContactsLogic
         //Code
     }
 }
+
