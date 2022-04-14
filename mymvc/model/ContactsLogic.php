@@ -16,19 +16,20 @@ class ContactsLogic
     public function createContact()
     {
         // Code
-    }
+    }   
 
-    public function readContact()
+    public function readContact($id)
     {
-        // iets
+        $sql = 'SELECT * FROM contacts WHERE id = '.$id;
+        $result = $this->DataHandler->readData($sql);
+        return $result;
     }
 
     public function readContacts()
     {
-        try {
-        } catch (Exception $e) {
-            throw $e;
-        }
+        $sql = 'SELECT * FROM contacts';
+        $result = $this->DataHandler->readData($sql);
+        return $result;
     }
     public function updateContact()
     {
