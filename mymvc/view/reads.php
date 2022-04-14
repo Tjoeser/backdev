@@ -2,8 +2,6 @@
 // require 'header.php';
 var_dump($contacts);
 // require 'footer.php';
-
-<?php
 require_once('DataHandler.php');
 class Reads
 {
