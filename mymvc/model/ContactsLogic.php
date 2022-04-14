@@ -28,7 +28,7 @@ class ContactsLogic
     public function readAllContacts()
     {
         $sql = 'SELECT * FROM contacts';
-        $result = $this->DataHandler->readData($sql);
+        $result = $this->Datahandler->readData($sql);
         return $result;
     }
     public function updateContact()
