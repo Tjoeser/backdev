@@ -5,7 +5,7 @@ class ContactsLogic
 {
     public function __construct()
     {
-        $this->Datahandler = new Datahandler("localhost", "mysql", "mvc", "root", "");
+        $this->Datahandler = new Datahandler("localhost", "mysql", "mymvc", "root", "");
     }
 
     public function __destruct()
@@ -16,20 +16,28 @@ class ContactsLogic
     public function createContact()
     {
         // Code
-    }   
+    }
 
-    public function readContact($id)
+    public function readContact()
     {
-        $sql = 'SELECT * FROM contacts WHERE id = '.$id;
-        $result = $this->DataHandler->readData($sql);
-        return $result;
+        $sql = 'SELECT * FROM contacts WHERE id = ' . $id;
+        $results = $this->Datahandler->readData($sql);
+        return $results;
     }
 
     public function readAllContacts()
     {
-        $sql = 'SELECT * FROM contacts';
-        $result = $this->Datahandler->readData($sql);
-        return $result;
+        try {
+            
+                $sql = "SELECT * FROM contacts";
+                $result = $this->Datahandler->readsData($sql);
+                //$result->setFetchMode(PDO::FETCH_ASSOC);
+                $res = $result->fetchAll();
+               return $res;
+            
+        } catch (Exception $e) {
+            throw $e;
+        }
     }
     public function updateContact()
     {

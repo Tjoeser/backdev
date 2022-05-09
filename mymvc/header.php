@@ -10,8 +10,8 @@
 <body>
 <!-- Header -->
 <div class="header">
-  <h1>CRUD LEVELS</h1>
-  <p>With a <b>flexible</b> layout.</p>
+  <h1>Miauw miauw swa</h1>
+  <p>Met een<b> vleugje </b> catnip.</p>
 </div>
 <div class="navbar">
   <a href="./index.php">home</a>

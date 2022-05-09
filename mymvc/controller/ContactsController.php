@@ -26,6 +26,8 @@ class ContactsController
                     $this->collectCreateContact();
                     break;
             case 'reads' :
+                    $this->collectReadContact($_GET['id']);
+                    break;
             case 'update':
             case 'delete':
             default:
@@ -35,6 +37,14 @@ class ContactsController
             throw $e;
         }
     }
+
+    public function collectReadContact($id)
+    {
+        $res = $this->ContactsLogic->readAllContacts();
+        $contacts = $this->Output->createTable($res, "");
+        include 'view/reads.php';
+    }
+
 
     public function collectReadAllContacts()
     {
