@@ -123,3 +123,30 @@ tr:nth-child(even) {
   margin: 4px 2px;
 }
 /* button stying end */
+
+#submit{
+  background-color: #9b59b6;
+  border-radius: 10px;
+  height: 50px;
+  width: 100px;
+  cursor: pointer;
+}
+
+#name
+{
+  width: 100%;
+}
+
+#phone
+{
+  width: 100%;
+}
+
+#email
+{
+  width: 100%;
+}
+#location
+{
+  width: 100%;
+}

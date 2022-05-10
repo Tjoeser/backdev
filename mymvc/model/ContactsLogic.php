@@ -15,14 +15,14 @@ class ContactsLogic
 
     public function createContact()
     {
-        // Code
+        echo "yass";
     }
 
     public function readContact()
     {
-        $sql = 'SELECT * FROM contacts WHERE id = ' . $id;
-        $results = $this->Datahandler->readData($sql);
-        return $results;
+        // $sql = 'SELECT * FROM contacts WHERE id = ' . $id;
+        // $results = $this->Datahandler->readData($sql);
+        // return $results;
     }
 
     public function readAllContacts()

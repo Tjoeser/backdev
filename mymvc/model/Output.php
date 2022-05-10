@@ -88,12 +88,6 @@ class Output
         $html .= "</table>";
         return $html;
     }
-
-    
-
-    
-
-
 }
 
 ?>
