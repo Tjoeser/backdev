@@ -23,6 +23,7 @@ class ContactsController
             switch ($op) 
             {
             case 'create':
+                    echo "Yass!";
                     $this->collectCreateContact();
                     break;
             case 'reads' :
@@ -50,12 +51,13 @@ class ContactsController
     {
         $res = $this->ContactsLogic->readAllContacts();
         $contacts = $this->Output->createTable($res, "");
+
         include 'view/reads.php';
     }
 
     public function collectCreateContact()
     {
-        $contacts = $this->ContactsLogic->readContacts();
+        $contacts = $this->ContactsLogic->readContact();
         include 'view/reads.php';
     }
 

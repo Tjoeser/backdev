@@ -12,7 +12,7 @@ body {
 .header {
   padding: 60px;
   text-align: center;
-  background: #ff9ff3;
+  background: #9b59b6;
   color: white;
 }
 
@@ -99,7 +99,7 @@ tr:nth-child(even) {
 
 /* button styling */
 .crudfunctionbutton{
-  background-color: #1abc9c;
+  background-color: #9b59b6;
   border: none;
   color: white;
   padding: 1px 1px;

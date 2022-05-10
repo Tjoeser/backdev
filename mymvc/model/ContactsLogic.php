@@ -5,7 +5,7 @@ class ContactsLogic
 {
     public function __construct()
     {
-        $this->Datahandler = new Datahandler("localhost", "mysql", "mymvc", "root", "");
+        $this->Datahandler = new Datahandler("localhost", "mysql", "mvc", "root", "");
     }
 
     public function __destruct()
@@ -33,7 +33,7 @@ class ContactsLogic
                 $result = $this->Datahandler->readsData($sql);
                 //$result->setFetchMode(PDO::FETCH_ASSOC);
                 $res = $result->fetchAll();
-               return $res;
+                return $res;
             
         } catch (Exception $e) {
             throw $e;

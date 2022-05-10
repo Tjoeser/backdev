@@ -10,8 +10,8 @@
 <body>
 <!-- Header -->
 <div class="header">
-  <h1>Miauw miauw swa</h1>
-  <p>Met een<b> vleugje </b> catnip.</p>
+  <h1>prachig</h1>
+  <p>mooi mooi!</p>
 </div>
 <div class="navbar">
   <a href="./index.php">home</a>
