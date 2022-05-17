@@ -23,11 +23,7 @@ class ContactsController
             switch ($op) 
             {
             case 'create':
-                if (isset ($_POST['submit'])){
-                    $this->ContactsLogic->createContact();
-                } else{
                     $this->collectCreateContact();
-                }
                     break;
             case 'reads' :
                     $this->collectReadContact($_GET['id']);
@@ -54,13 +50,12 @@ class ContactsController
     {
         $res = $this->ContactsLogic->readAllContacts();
         $contacts = $this->Output->createTable($res, "");
-
         include 'view/reads.php';
     }
 
     public function collectCreateContact()
     {
-        $contacts = $this->ContactsLogic->readContact();
+        $contacts = $this->ContactsLogic->createContact();
         include 'view/create.php';
     }
 
