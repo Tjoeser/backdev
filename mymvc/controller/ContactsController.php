@@ -57,6 +57,7 @@ class ContactsController
     {
         $res = $this->ContactsLogic->readAllContacts();
         $contacts = $this->Output->createTable($res, "");
+        $msg = "showing page {} of all pages";
         include 'view/reads.php';
     }
 

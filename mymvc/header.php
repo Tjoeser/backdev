@@ -35,5 +35,6 @@
   </div>
 
   <div class="main">
+    <?= isset($msg) ? "<div class='full-button'>".$msg
 
 

@@ -152,7 +152,6 @@ tr:nth-child(even) {
 }
 
 .msg-box{
-  position: relative;
   border-radius: 10px;
   border-style: solid;
   border-color: aqua;
