@@ -13,9 +13,10 @@ require 'header.php';
     <input type="text" id="email" name="email" value="" ><br><br>
     <label for="location">Address:</label><br>
     <input type="text" id="location" name="location" value=""><br><br>
-    <input type="submit" id="submit" name="submit" value="Submit">
+    <input type="submit" class="submit" name="submit" value="Submit">
 </form>
 
+<a href='index.php' class="submit"><i class='fa-solid fa-circle-plus'></i> Home</a>
 
 <?php
 require 'footer.php';

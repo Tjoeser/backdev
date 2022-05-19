@@ -15,7 +15,6 @@ class ContactsLogic
 
     public function createContact()
     {
-        echo "yass";
         if (isset($_REQUEST['submit'])) {
             $name = $_REQUEST['fname'];
             $phone = $_REQUEST['phone'];
@@ -28,6 +27,8 @@ class ContactsLogic
                             VALUES('$name', '$phone', '$email', '$location')";
                 $this->Datahandler->createData($sql);
                 return 'Successfully created new contact!';
+                    $html = "<a class=\"crudfunctionbutton\" href='index.php'><i class='fa-solid fa-circle-plus'></i> Home</a>";
+                    echo $html;
             }
         }
     }
@@ -47,7 +48,7 @@ class ContactsLogic
                 $result = $this->Datahandler->readsData($sql);
                 //$result->setFetchMode(PDO::FETCH_ASSOC);
                 $res = $result->fetchAll();
-               return $res;
+                return $res;
             
         } catch (Exception $e) {
             throw $e;
@@ -58,9 +59,11 @@ class ContactsLogic
         //Code
     }
 
-    public function deleteContact()
+    public function deleteContact($id)
     {
-        //Code
+        $sql = "DELETE  FROM contacts WHERE id=$id";
+        $result = $this->Datahandler->deleteData($sql);
+        return 'Succesvol verwijderd ' . $result;
     }
 }
 

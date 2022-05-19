@@ -30,6 +30,9 @@ class ContactsController
                     break;
             case 'update':
             case 'delete':
+                    $id = $_GET['id'];
+                    $this->collectDeleteContact($id);
+                    break;
             default:
                 $this->collectReadAllContacts();
             }
@@ -64,9 +67,10 @@ class ContactsController
         // code
     }
 
-    public function collectDeleteContact()
+    public function collectDeleteContact($id)
     {
-        // code
+        $contacts = $this->ContactsLogic->deleteContact($id);
+        include "view/delete.php";
     }
 
 }
