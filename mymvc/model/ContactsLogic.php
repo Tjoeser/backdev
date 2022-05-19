@@ -33,11 +33,13 @@ class ContactsLogic
         }
     }
 
-    public function readContacts()
+    public function readContacts($id)
     {
-        // $sql = 'SELECT * FROM contacts WHERE id = ' . $id;
-        // $results = $this->Datahandler->readData($sql);
-        // return $results;
+        echo "yesh!";
+        $sql = "SELECT * FROM contacts WHERE id=$id";
+        $result = $this->Datahandler->readsData($sql);
+        $res = $result->fetchAll();
+        return $res;  
     }
 
     public function readAllContacts()

@@ -26,6 +26,7 @@ class ContactsController
                     $this->collectCreateContact();
                     break;
             case 'reads' :
+                    echo "in reads case";
                     $this->collectReadContact($_GET['id']);
                     break;
             case 'update':
@@ -33,6 +34,9 @@ class ContactsController
                     $id = $_GET['id'];
                     $this->collectDeleteContact($id);
                     break;
+            case 'choice':
+                    echo "yeshes!";
+                    include "view/choice.php";
             default:
                 $this->collectReadAllContacts();
             }
@@ -43,8 +47,8 @@ class ContactsController
 
     public function collectReadContact($id)
     {
-        $res = $this->ContactsLogic->readAllContacts();
-        $contacts = $this->Output->createTable($res, "");
+        $res = $this->ContactsLogic->readContacts($id);
+        $contacts = $this->Output->createList($res);
         include 'view/reads.php';
     }
 

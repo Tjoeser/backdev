@@ -15,7 +15,7 @@
 </div>
 <div class="navbar">
   <a href="./index.php">home</a>
-  <a href="#">Link</a>
+  <a href="index.php?op=choice">Read</a>
   <a href="#">Link</a>
   <a href="#">Link</a>
 </div>

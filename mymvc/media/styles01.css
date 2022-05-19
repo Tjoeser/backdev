@@ -150,3 +150,10 @@ tr:nth-child(even) {
 {
   width: 100%;
 }
+
+.msg-box{
+  position: relative;
+  border-radius: 10px;
+  border-style: solid;
+  border-color: aqua;
+}
