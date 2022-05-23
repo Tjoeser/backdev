@@ -9,5 +9,5 @@ require 'header.php';
 <?php
 $html = "<a class=\"crudfunctionbutton\" href='index.php?op=create'><i class='fa-solid fa-circle-plus'></i> Create</a>";
 echo $html;
-echo $contacts;
+echo $content;
 require 'footer.php';

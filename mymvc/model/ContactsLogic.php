@@ -56,6 +56,21 @@ class ContactsLogic
             throw $e;
         }
     }
+
+    public function readBlog()
+    {
+        try {
+            
+                $sql = "SELECT * FROM content";
+                $result = $this->Datahandler->readsData($sql);
+                //$result->setFetchMode(PDO::FETCH_ASSOC);
+                $res = $result->fetchAll();
+                return $res;
+            
+        } catch (Exception $e) {
+            throw $e;
+        }
+    }
     public function updateContact()
     {
         //Code

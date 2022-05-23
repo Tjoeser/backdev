@@ -40,6 +40,22 @@ class Output
         $html .= "</table>";
         return $html;
     }
+
+    public function createBlog($entries, $ftable)
+    {
+        $tableheader = false;
+        $html = "";
+        $html .= '<table class="' . $ftable . '">';
+        foreach ($entries as $row) {
+            $html .= "<tr id='tablerow'>";
+            foreach ($row as $key => $value) {
+                $html .= "<td class='{$key}'>{$value}</td>";
+            }
+
+        }
+        $html .= "</table>";
+        return $html;
+    }
     public function createlist($entries){
         $html = '<ul>';
         foreach ($entries as $entery) {

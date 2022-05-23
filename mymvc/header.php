@@ -15,11 +15,10 @@
 </div>
 <div class="navbar">
   <a href="./index.php">home</a>
-  <a href="index.php?op=choice">Choice</a>
+  <a href="index.php?op=choice">Read</a>
   <a href="#">Link</a>
   <a href="#">Link</a>
 </div>
-
 <!-- The flexible grid (content) -->
 <div class="row">
   <div class="side">
@@ -35,7 +34,3 @@
   </div>
 
   <div class="main">
-    <!-- / -->
-    </div>
-
-</body>

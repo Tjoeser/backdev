@@ -95,6 +95,75 @@ tr:nth-child(even) {
   background-color: #dddddd;
 }
 
+
+.id
+{
+  background-color: green;
+  position: absolute;
+  top: 63px;
+  right: 100px;
+  height: 10px;
+  visibility: hidden;
+}
+
+.auteur{
+  background-color: red;
+  position: absolute;
+  top: auto;
+  right: auto;
+  height: 42px;
+  width: 237px;
+}
+
+.titel{
+  background-color: blue;
+  position: absolute;
+  top: 484px;
+  right: auto;
+  height: 42px;
+  width: 237px;
+}
+
+.images
+{
+  background-color: aqua;
+  position: relative;
+  top: 100px;
+  right: 100px;
+  visibility: hidden;
+}
+
+.content
+{
+  background-color: #9b59b6;
+  position: absolute;
+  top: auto;
+  right: 23%;
+  height: 496px;
+  width: 650px;
+}
+
+.social
+{
+  
+  background-color: chocolate;
+  position: absolute;
+  top: 920px;
+  right: -0px;
+  height: 50px;
+  width: 489px;
+  text-align:left;
+}
+
+.datum{
+  background-color: darkcyan;
+  position: absolute;
+  top: 524px;
+  right: 1089px;
+  height: 39px;
+  width: 223px;
+}
+
 /* end table styling */
 
 /* button styling */
