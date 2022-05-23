@@ -31,9 +31,9 @@ class Output
             foreach ($row as $key => $value) {
                 $html .= "<td data-title='{$key}'>{$value}</td>";
             }
-            $html .= "<td><a class=\"crudfunctionbutton\" href='index.php?op=reads&id=" . $row['id'] . 
-            "'><i class=\"fa-brands fa-readme\"></i> Read</a><a class=\"crudfunctionbutton\" href='index.php?op=update&id=" . $row['id'] . 
-            "'><i class=\"fa-solid fa-pencil\"></i> Update</a><a class=\"crudfunctionbutton\" href='index.php?op=delete&id=" . $row['id'] . 
+            $html .= "<td><a class=\"crudfunctionbutton\" href='index.php?op=reads&id=" . $row['id'] .
+            "'><i class=\"fa-brands fa-readme\"></i> Read</a><a class=\"crudfunctionbutton\" href='index.php?op=update&id=" . $row['id'] .
+            "'><i class=\"fa-solid fa-pencil\"></i> Update</a><a class=\"crudfunctionbutton\" href='index.php?op=delete&id=" . $row['id'] .
             "'onclick=\"return confirm('Are you sure you want to delete?');\"><i class=\"fa-solid fa-trash-can\"></i> Delete</a></td>";
             $html .= "</tr>";
         }
@@ -43,7 +43,7 @@ class Output
     public function createlist($entries){
         $html = '<ul>';
         foreach ($entries as $entery) {
-    
+
             foreach ($entery as  $value) {
                 $html .= "<li>" . $value . "</li>";
             }

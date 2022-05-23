@@ -15,7 +15,7 @@
 </div>
 <div class="navbar">
   <a href="./index.php">home</a>
-  <a href="index.php?op=choice">Read</a>
+  <a href="index.php?op=choice">Choice</a>
   <a href="#">Link</a>
   <a href="#">Link</a>
 </div>
@@ -35,6 +35,7 @@
   </div>
 
   <div class="main">
-    <?= isset($msg) ? "<div class='full-button'>".$msg
+    <!-- / -->
+    </div>
 
-
+</body>
