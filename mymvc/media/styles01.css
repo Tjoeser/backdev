@@ -98,7 +98,7 @@ tr:nth-child(even) {
 
 .id
 {
-  background-color: green;
+  background-color: darkgray;
   position: absolute;
   top: 63px;
   right: 100px;
@@ -107,7 +107,7 @@ tr:nth-child(even) {
 }
 
 .auteur{
-  background-color: red;
+  background-color: darkgray;
   position: absolute;
   top: auto;
   right: auto;
@@ -116,7 +116,7 @@ tr:nth-child(even) {
 }
 
 .titel{
-  background-color: blue;
+  background-color: darkgray;
   position: absolute;
   top: 484px;
   right: auto;
@@ -126,7 +126,7 @@ tr:nth-child(even) {
 
 .images
 {
-  background-color: aqua;
+  background-color: darkgray;
   position: relative;
   top: 100px;
   right: 100px;
@@ -135,33 +135,32 @@ tr:nth-child(even) {
 
 .content
 {
-  background-color: #9b59b6;
+  background-color: darkgray;
   position: absolute;
   top: auto;
-  right: 23%;
-  height: 496px;
+  right: 10%;
+  height: 442px;
   width: 650px;
 }
 
 .social
 {
-  
-  background-color: chocolate;
+  background-color: darkgray;
   position: absolute;
   top: 920px;
-  right: -0px;
+  right: 550px;
   height: 50px;
   width: 489px;
   text-align:left;
 }
 
 .datum{
-  background-color: darkcyan;
+  background-color: darkgray;
   position: absolute;
   top: 524px;
-  right: 1089px;
+  right: 806px;
   height: 39px;
-  width: 223px;
+  width: 237px;
 }
 
 /* end table styling */
