@@ -118,7 +118,7 @@ tr:nth-child(even) {
 .titel{
   background-color: darkgray;
   position: absolute;
-  top: 484px;
+  top: 460px;
   right: auto;
   height: 42px;
   width: 237px;
@@ -157,7 +157,7 @@ tr:nth-child(even) {
 .datum{
   background-color: darkgray;
   position: absolute;
-  top: 524px;
+  top: 501px;
   right: 806px;
   height: 39px;
   width: 237px;
