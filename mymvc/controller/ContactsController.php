@@ -37,7 +37,7 @@ class ContactsController
                     $this->collectDeleteContact($id);
                     break;
             case 'choice':
-                    $this->collectReadContent();
+                    $this->collectReadContent(2);
             default:
                 $this->collectReadAllContacts();
             }
@@ -62,9 +62,9 @@ class ContactsController
         include 'view/reads.php';
     }
 
-    public function collectReadContent()
+    public function collectReadContent($id)
     {
-        $res = $this->ContentsLogic->ReadAllContent();
+        $res = $this->ContentsLogic->readContent($id);
         $content = $this->Output->createBlog($res, "");
         $msg = "showing page {} of all pages";
         include 'view/choice.php';

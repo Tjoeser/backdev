@@ -13,13 +13,33 @@ class ContentsLogic{
         // code
     }
 
+    public function createContent()
+    {
+        if (isset($_REQUEST['submit'])) {
+            $name = $_REQUEST['fname'];
+            $phone = $_REQUEST['phone'];
+            $email = $_REQUEST['email'];
+            $location = $_REQUEST['location'];
+            if (empty($name) or empty($phone) or empty($email) or empty($location)) {
+                return "Alle velden zijn vereist";
+            } else {
+                $sql = "INSERT INTO contacts (name, phone, email, location) 
+                            VALUES('$name', '$phone', '$email', '$location')";
+                $this->Datahandler->createData($sql);
+                return 'Successfully created new contact!';
+                    $html = "<a class=\"crudfunctionbutton\" href='index.php'><i class='fa-solid fa-circle-plus'></i> Home</a>";
+                    echo $html;
+            }
+        }
+    }
+
     public function readContent($id)
     {
         echo "yesh!";
-        $sql = "SELECT * FROM contacts WHERE id=$id";
+        $sql = "SELECT * FROM content WHERE id=$id";
         $result = $this->Datahandler->readsData($sql);
         $res = $result->fetchAll();
-        return $res;  
+        return $res;
     }
     public function ReadAllContent()
     {
