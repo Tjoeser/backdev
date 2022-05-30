@@ -1,6 +1,7 @@
 <?php
 require_once 'model/ContactsLogic.php';
 require_once 'model/Output.php';
+require_once 'model/ContentsLogic.php';
 
 class ContactsController
 {
@@ -8,6 +9,7 @@ class ContactsController
     {
         $this->ContactsLogic = new ContactsLogic();
         $this->Output = new Output();
+        $this->ContentsLogic = new ContentsLogic();
     }
 
     public function __destruct()
@@ -35,7 +37,7 @@ class ContactsController
                     $this->collectDeleteContact($id);
                     break;
             case 'choice':
-                    $this->collectReadBlog();
+                    $this->collectReadContent();
             default:
                 $this->collectReadAllContacts();
             }
@@ -60,9 +62,9 @@ class ContactsController
         include 'view/reads.php';
     }
 
-    public function collectReadBlog()
+    public function collectReadContent()
     {
-        $res = $this->ContactsLogic->readBlog();
+        $res = $this->ContentsLogic->ReadAllContent();
         $content = $this->Output->createBlog($res, "");
         $msg = "showing page {} of all pages";
         include 'view/choice.php';
