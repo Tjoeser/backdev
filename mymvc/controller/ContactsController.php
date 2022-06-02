@@ -22,7 +22,7 @@ class ContactsController
         try {
 
             $op = isset($_GET['op']) ? $_GET['op'] : '';
-            switch ($op) 
+            switch ($op)
             {
             case 'create':
                     $this->collectCreateContact();
@@ -37,7 +37,12 @@ class ContactsController
                     $this->collectDeleteContact($id);
                     break;
             case 'choice':
-                    $this->collectReadContent(2);
+                    $this->collectReadContents();
+                    break;
+            case 'readpost':
+                    echo "we zitten in de readpost";
+                    $this->collectReadContent($_GET['id']);
+                    break;
             default:
                 $this->collectReadAllContacts();
             }
@@ -65,6 +70,14 @@ class ContactsController
     public function collectReadContent($id)
     {
         $res = $this->ContentsLogic->readContent($id);
+        $content = $this->Output->createBlog($res, "");
+        $msg = "showing page {} of all pages";
+        include 'view/choice.php';
+    }
+
+    public function collectReadContents()
+    {
+        $res = $this->ContentsLogic->readAllContent();
         $content = $this->Output->createBlog($res, "");
         $msg = "showing page {} of all pages";
         include 'view/choice.php';

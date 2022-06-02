@@ -43,25 +43,24 @@ class Output
 
     public function createBlog($entries, $ftable)
     {
-        $tableheader = false;
-        $html = "";
-        $html .= '<table class="' . $ftable . '">';
-        foreach ($entries as $row) {
-            $html .= "<tr id='tablerow'>";
-            foreach ($row as $key => $value) {
-                $html .= "<td class='{$key}'>{$value}</td>";
-            }
+        $html = '<ul>';
+        foreach ($entries as $entery) {
 
+            foreach ($entery as  $key => $value) {
+                $html .= "<li class='{$key}'>{$value}</li>";
+            }
         }
-        $html .= "</table>";
+        $html .= '</ul>';
+        $html .= '<br>';
         return $html;
     }
+
     public function createlist($entries){
         $html = '<ul>';
         foreach ($entries as $entery) {
 
-            foreach ($entery as  $value) {
-                $html .= "<li>" . $value . "</li>";
+            foreach ($entery as $key => $value) {
+                $html .= "<li class='{$key}'>{$value}</li>";
             }
         }
         $html .= '</ul>';

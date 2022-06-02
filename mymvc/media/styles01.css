@@ -106,7 +106,7 @@ tr:nth-child(even) {
   visibility: hidden;
 }
 
-.auteur{
+/* .auteur{
   background-color: darkgray;
   position: absolute;
   top: auto;
@@ -161,7 +161,7 @@ tr:nth-child(even) {
   right: 806px;
   height: 39px;
   width: 237px;
-}
+} */
 
 /* end table styling */
 
