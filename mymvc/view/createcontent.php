@@ -12,7 +12,7 @@ require 'header.php';
     <label for="images">Images:</label><br>
     <input type="file" id="images" name="images" value="" ><br><br>
     <label for="content">Content:</label><br>
-    <input type="text" id="content" name="content" value=""><br><br>
+    <textarea type="text" id="content" name="content" value="" cols="2" rows="3" ></textarea><br><br>
     <label for="social">Social:</label><br>
     <input type="text" id="social" name="social" value=""><br><br>
     <label for="datum">Datum:</label><br>
