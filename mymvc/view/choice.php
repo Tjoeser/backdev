@@ -6,6 +6,7 @@ require 'header.php';
     <p>Show the contact</p>
 </div>
 
+
 <?php
 
 echo $content;

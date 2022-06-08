@@ -40,9 +40,24 @@ class ContactsController
                     $this->collectReadContents();
                     break;
             case 'readpost':
-                    echo "we zitten in de readpost";
-                    $this->collectReadContent($_GET['id']);
+            case 'createcontent':
+                echo "we zitten in de createcontent";
+                    $this->collectCreateContent();
                     break;
+            case 'readcontent':
+                echo "we zitten in de readpost";
+                $this->collectReadContent($_GET['id']);
+                break;
+            case 'updatecontent':
+                echo "update content";
+            case 'deletecontent':
+                echo "delete content";
+                    $id = $_GET['id'];
+                    $this->collectDeleteContent($id);
+                    break;
+            case 'poc':
+                $this->openPOC();
+                break;
             default:
                 $this->collectReadAllContacts();
             }
@@ -70,7 +85,7 @@ class ContactsController
     public function collectReadContent($id)
     {
         $res = $this->ContentsLogic->readContent($id);
-        $content = $this->Output->createBlog($res, "");
+        $content = $this->Output->createContentBlog($res, "");
         $msg = "showing page {} of all pages";
         include 'view/choice.php';
     }
@@ -83,6 +98,12 @@ class ContactsController
         include 'view/choice.php';
     }
 
+    public function collectCreateContent()
+    {
+        echo "we zitten in de collectcreatecontent";
+        $contacts = $this->ContentsLogic->createContent();
+        include 'view/createcontent.php';
+    }
 
     public function collectCreateContact()
     {
@@ -101,4 +122,13 @@ class ContactsController
         include "view/delete.php";
     }
 
+    public function collectDeleteContent($id)
+    {
+        $contacts = $this->ContentsLogic->deleteContent($id);
+        include "view/delete.php";
+    }
+    public function openPOC()
+    {
+        include "view/poc.php";
+    }
 }

@@ -133,16 +133,15 @@ tr:nth-child(even) {
   visibility: hidden;
 }
 
-.content
+#content
 {
   background-color: darkgray;
   position: absolute;
   top: auto;
   right: 10%;
   height: 442px;
-  width: 650px;
+  width: 1000px;
 }
-
 .social
 {
   background-color: darkgray;

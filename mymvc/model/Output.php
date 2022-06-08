@@ -43,15 +43,41 @@ class Output
 
     public function createBlog($entries, $ftable)
     {
-        $html = '<ul>';
-        foreach ($entries as $entery) {
-
-            foreach ($entery as  $key => $value) {
-                $html .= "<li class='{$key}'>{$value}</li>";
+        $tableheader = false;
+        $html = "";
+        $html .= '<table class="' . $ftable . '">';
+        foreach ($entries as $row) {
+            $html .= "<tr id='tablerow'>";
+            foreach ($row as $key => $value) {
+                $html .= "<td id='{$key}'>{$value}</td>";
             }
+            $html .= "<td><a class=\"crudfunctionbutton\" href='index.php?op=readcontent&id=". $row['id'] ."
+            '><i class=\"fa-brands fa-readme\"></i> Read</a><a class=\"crudfunctionbutton\" href='index.php?op=updatecontent&id=" . $row['id'] .
+            "'><i class=\"fa-solid fa-pencil\"></i> Update</a><a class=\"crudfunctionbutton\" href='index.php?op=deletecontent&id=" . $row['id'] .
+            "'onclick=\"return confirm('Are you sure you want to delete?');\"><i class=\"fa-solid fa-trash-can\"></i> Delete</a></td>";
+            $html .= "</tr>";
         }
-        $html .= '</ul>';
-        $html .= '<br>';
+        $html .= "</table>";
+        return $html;
+    }
+
+    public function createContentBlog($entries, $ftable)
+    {
+        $tableheader = false;
+        $html = "";
+        $html .= '<table class="' . $ftable . '">';
+        foreach ($entries as $row) {
+            $html .= "<tr id='tablerow'>";
+            foreach ($row as $key => $value) {
+                $html .= "<td id='{$key}'>{$value}</td>";
+            }
+            // $html .= "<td><a class=\"crudfunctionbutton\" href='index.php?op=readpost&id=2
+            // '><i class=\"fa-brands fa-readme\"></i> Read</a><a class=\"crudfunctionbutton\" href='index.php?op=update&id=" . $row['id'] .
+            // "'><i class=\"fa-solid fa-pencil\"></i> Update</a><a class=\"crudfunctionbutton\" href='index.php?op=delete&id=" . $row['id'] .
+            // "'onclick=\"return confirm('Are you sure you want to delete?');\"><i class=\"fa-solid fa-trash-can\"></i> Delete</a></td>";
+            // $html .= "</tr>";
+        }
+        $html .= "</table>";
         return $html;
     }
 
@@ -103,10 +129,6 @@ class Output
         $html .= "</table>";
         return $html;
     }
-
-    
-
-    
 
 
 }
