@@ -12,7 +12,7 @@ class Output
     {
     }
     //wordt 2d array verwacht
-    public function createTable($entries, $ftable)
+    public function createTable($entries, $ftable, $direction )
     {
         $tableheader = false;
         $html = "";
@@ -31,7 +31,7 @@ class Output
             foreach ($row as $key => $value) {
                 $html .= "<td data-title='{$key}'>{$value}</td>";
             }
-            $html .= "<td><a class=\"crudfunctionbutton\" href='index.php?op=reads&id=" . $row['id'] .
+            $html .= "<td><a class=\"crudfunctionbutton\" href='index.php?op=".$direction."&id=" . $row['id'] .
             "'><i class=\"fa-brands fa-readme\"></i> Read</a><a class=\"crudfunctionbutton\" href='index.php?op=update&id=" . $row['id'] .
             "'><i class=\"fa-solid fa-pencil\"></i> Update</a><a class=\"crudfunctionbutton\" href='index.php?op=delete&id=" . $row['id'] .
             "'onclick=\"return confirm('Are you sure you want to delete?');\"><i class=\"fa-solid fa-trash-can\"></i> Delete</a></td>";
@@ -41,43 +41,20 @@ class Output
         return $html;
     }
 
-    public function createBlog($entries, $ftable)
+    public function createBlog($content, $img)
     {
-        $tableheader = false;
-        $html = "";
-        $html .= '<table class="' . $ftable . '">';
-        foreach ($entries as $row) {
-            $html .= "<tr id='tablerow'>";
-            foreach ($row as $key => $value) {
-                $html .= "<td id='{$key}'>{$value}</td>";
+        $html = '<div>';
+        foreach ($content as $row) {
+            $html .= "<div>";
+            foreach ($row as $value ) {
+                $html .= "<p>{$value}</p>";
+                }
             }
-            $html .= "<td><a class=\"crudfunctionbutton\" href='index.php?op=readcontent&id=". $row['id'] ."
-            '><i class=\"fa-brands fa-readme\"></i> Read</a><a class=\"crudfunctionbutton\" href='index.php?op=updatecontent&id=" . $row['id'] .
-            "'><i class=\"fa-solid fa-pencil\"></i> Update</a><a class=\"crudfunctionbutton\" href='index.php?op=deletecontent&id=" . $row['id'] .
-            "'onclick=\"return confirm('Are you sure you want to delete?');\"><i class=\"fa-solid fa-trash-can\"></i> Delete</a></td>";
-            $html .= "</tr>";
-        }
-        $html .= "</table>";
-        return $html;
-    }
-
-    public function createContentBlog($entries, $ftable)
-    {
-        $tableheader = false;
-        $html = "";
-        $html .= '<table class="' . $ftable . '">';
-        foreach ($entries as $row) {
-            $html .= "<tr id='tablerow'>";
-            foreach ($row as $key => $value) {
-                $html .= "<td id='{$key}'>{$value}</td>";
-            }
-            // $html .= "<td><a class=\"crudfunctionbutton\" href='index.php?op=readpost&id=2
-            // '><i class=\"fa-brands fa-readme\"></i> Read</a><a class=\"crudfunctionbutton\" href='index.php?op=update&id=" . $row['id'] .
-            // "'><i class=\"fa-solid fa-pencil\"></i> Update</a><a class=\"crudfunctionbutton\" href='index.php?op=delete&id=" . $row['id'] .
-            // "'onclick=\"return confirm('Are you sure you want to delete?');\"><i class=\"fa-solid fa-trash-can\"></i> Delete</a></td>";
-            // $html .= "</tr>";
-        }
-        $html .= "</table>";
+        $html .= "</div>";
+        foreach ($img as $imglink){
+            $html .= '<img src=./view/assets/images/'.$imglink.'>';
+        }  
+        $html .= "</div>";
         return $html;
     }
 

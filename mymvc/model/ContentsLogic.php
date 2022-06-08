@@ -38,18 +38,17 @@ class ContentsLogic{
     public function readContent($id)
     {
         echo "yesh!";
-        $sql = "SELECT images, content FROM content WHERE id=$id";
+        $sql = "SELECT id, auteur, titel, content, social, datum FROM content WHERE id=$id";
         $result = $this->Datahandler->readsData($sql);
         $res = $result->fetchAll();
-        return $res;
+        $img = $this->readImages($id);
+        return [$res, $img];
     }
     public function ReadAllContent()
     {
         try {
-                $sql = "SELECT id, auteur, titel, social, datum FROM content";
-                $result = $this->Datahandler->readsData($sql);
-                //$result->setFetchMode(PDO::FETCH_ASSOC);
-                $res = $result->fetchAll();
+                $sql = "SELECT id, auteur, titel, datum FROM content";
+                $res = $this->Datahandler->readsData($sql);
                 return $res;
         } catch (Exception $e) {
             throw $e;
@@ -65,6 +64,31 @@ class ContentsLogic{
         $sql = "DELETE  FROM contents WHERE id=$id";
         $result = $this->Datahandler->deleteData($sql);
         return 'Succesvol verwijderd ' . $result;
+    }
+
+    public function readImages($id){
+        $returnarray = [];
+
+        $sql = "SELECT images From content Where id=".$id;
+        $result = $this->Datahandler->readsData($sql);
+        $content = $result->fetchAll();
+
+        $images = explode("," , $content[0]['images']);
+        foreach($images as $imageId)
+        {
+            $sql = "SELECT * FROM images WHERE id=" .$imageId;
+            $result = $this->Datahandler->readsData($sql);
+            $img = $result->fetchAll();
+
+            foreach($img as $strings => $val){
+                foreach($val as $image){
+                    if(is_string($image)){
+                        array_push($returnarray,$image);
+                    }
+                }
+            }
+        }
+        return $returnarray;
     }
 }
 ?>

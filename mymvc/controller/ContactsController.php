@@ -77,7 +77,7 @@ class ContactsController
     public function collectReadAllContacts()
     {
         $res = $this->ContactsLogic->readAllContacts();
-        $contacts = $this->Output->createTable($res, "");
+        $contacts = $this->Output->createTable($res, "", "reads");
         $msg = "showing page {} of all pages";
         include 'view/reads.php';
     }
@@ -85,7 +85,7 @@ class ContactsController
     public function collectReadContent($id)
     {
         $res = $this->ContentsLogic->readContent($id);
-        $content = $this->Output->createContentBlog($res, "");
+        $content = $this->Output->createBlog($res[0],$res[1]);
         $msg = "showing page {} of all pages";
         include 'view/choice.php';
     }
@@ -93,7 +93,7 @@ class ContactsController
     public function collectReadContents()
     {
         $res = $this->ContentsLogic->readAllContent();
-        $content = $this->Output->createBlog($res, "");
+        $content = $this->Output->createTable($res,"", "readcontent");
         $msg = "showing page {} of all pages";
         include 'view/choice.php';
     }
