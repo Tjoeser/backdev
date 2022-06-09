@@ -47,9 +47,18 @@ class Output
         foreach ($content as $row) {
             $html .= "<div>";
             foreach ($row as $value ) {
-                $html .= "<p>{$value}</p>";
+                $sociallink = $row['social'];
+                $auteur = $row['auteur'];
+                $titel = $row['titel'];
+                $content = $row['content'];
+                $datum = $row['datum'];
                 }
             }
+        $html .= "<h5>$auteur</h5>";
+        $html .= "<h1>$titel</h1>";
+        $html .= "<p>$content</p>";
+        $html .= "<h6>$datum</h6>";
+        $html .= "<a href='$sociallink' class='twitter-follow-button' data-show-count='false'>Follow</a><script async src='https://platform.twitter.com/widgets.js'' charset='utf-8'></script><br><br>";
         $html .= "</div>";
         foreach ($img as $imglink){
             $html .= '<img src=./view/assets/images/'.$imglink.'>';

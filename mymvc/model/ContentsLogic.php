@@ -42,7 +42,7 @@ class ContentsLogic{
         $result = $this->Datahandler->readsData($sql);
         $res = $result->fetchAll();
         $img = $this->readImages($id);
-        return [$res, $img];
+        return [$res,$img];
     }
     public function ReadAllContent()
     {
