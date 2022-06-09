@@ -39,7 +39,6 @@ class ContactsController
             case 'choice':
                     $this->collectReadContents();
                     break;
-            case 'readpost':
             case 'createcontent':
                 echo "we zitten in de createcontent";
                     $this->collectCreateContent();

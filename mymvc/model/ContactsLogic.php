@@ -39,7 +39,7 @@ class ContactsLogic
         $sql = "SELECT * FROM contacts WHERE id=$id";
         $result = $this->Datahandler->readsData($sql);
         $res = $result->fetchAll();
-        return $res;  
+        return $res;
     }
 
     public function readAllContacts()

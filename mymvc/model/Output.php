@@ -12,7 +12,7 @@ class Output
     {
     }
     //wordt 2d array verwacht
-    public function createTable($entries, $ftable, $direction )
+    public function createTable($entries, $ftable, $direction)
     {
         $tableheader = false;
         $html = "";
@@ -53,7 +53,7 @@ class Output
         $html .= "</div>";
         foreach ($img as $imglink){
             $html .= '<img src=./view/assets/images/'.$imglink.'>';
-        }  
+        }
         $html .= "</div>";
         return $html;
     }
