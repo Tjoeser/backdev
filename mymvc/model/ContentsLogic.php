@@ -22,6 +22,7 @@ class ContentsLogic{
             $content = $_REQUEST['content'];
             $social = $_REQUEST['social'];
             $datum = $_REQUEST['datum'];
+            // $this->saveImages($images);
             if (empty($auteur) or empty($titel) or empty($images) or empty($content)or empty($social) or empty($datum)) {
                 return "Alle velden zijn vereist";
             } else {
@@ -37,7 +38,6 @@ class ContentsLogic{
 
     public function readContent($id)
     {
-        echo "yesh!";
         $sql = "SELECT id, auteur, titel, content, social, datum FROM content WHERE id=$id";
         $result = $this->Datahandler->readsData($sql);
         $res = $result->fetchAll();
@@ -76,7 +76,7 @@ class ContentsLogic{
         $images = explode("," , $content[0]['images']);
         foreach($images as $imageId)
         {
-            $sql = "SELECT * FROM images WHERE id=" .$imageId;
+            $sql = "SELECT imagename FROM images WHERE id=" .$imageId;
             $result = $this->Datahandler->readsData($sql);
             $img = $result->fetchAll();
 
@@ -89,6 +89,11 @@ class ContentsLogic{
             }
         }
         return $returnarray;
+    }
+
+    public function saveImages($img){
+        define('DIRECTORY', '/view/assets/images');
+        file_put_contents(DIRECTORY . $img, "");
     }
 }
 ?>

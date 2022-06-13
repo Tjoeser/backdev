@@ -24,39 +24,17 @@ class ContactsController
             $op = isset($_GET['op']) ? $_GET['op'] : '';
             switch ($op)
             {
-            case 'create':
+            case 'createcontacts':
                     $this->collectCreateContact();
                     break;
-            case 'reads' :
-                    echo "in reads case";
+            case 'readscontacts' :
                     $this->collectReadContact($_GET['id']);
                     break;
-            case 'update':
-            case 'delete':
+            case 'updatecontacts':
+            case 'deletecontacts':
                     $id = $_GET['id'];
                     $this->collectDeleteContact($id);
                     break;
-            case 'choice':
-                    $this->collectReadContents();
-                    break;
-            case 'createcontent':
-                echo "we zitten in de createcontent";
-                    $this->collectCreateContent();
-                    break;
-            case 'readcontent':
-                echo "we zitten in de readpost";
-                $this->collectReadContent($_GET['id']);
-                break;
-            case 'updatecontent':
-                echo "update content";
-            case 'deletecontent':
-                echo "delete content";
-                    $id = $_GET['id'];
-                    $this->collectDeleteContent($id);
-                    break;
-            case 'poc':
-                $this->openPOC();
-                break;
             default:
                 $this->collectReadAllContacts();
             }
@@ -64,7 +42,6 @@ class ContactsController
             throw $e;
         }
     }
-
     public function collectReadContact($id)
     {
         $res = $this->ContactsLogic->readContacts($id);
@@ -72,36 +49,12 @@ class ContactsController
         include 'view/reads.php';
     }
 
-
     public function collectReadAllContacts()
     {
         $res = $this->ContactsLogic->readAllContacts();
         $contacts = $this->Output->createTable($res, "", "reads");
         $msg = "showing page {} of all pages";
         include 'view/reads.php';
-    }
-
-    public function collectReadContent($id)
-    {
-        $res = $this->ContentsLogic->readContent($id);
-        $content = $this->Output->createBlog($res[0],$res[1]);
-        $msg = "showing page {} of all pages";
-        include 'view/choice.php';
-    }
-
-    public function collectReadContents()
-    {
-        $res = $this->ContentsLogic->readAllContent();
-        $content = $this->Output->createTable($res,"", "readcontent");
-        $msg = "showing page {} of all pages";
-        include 'view/choice.php';
-    }
-
-    public function collectCreateContent()
-    {
-        echo "we zitten in de collectcreatecontent";
-        $contacts = $this->ContentsLogic->createContent();
-        include 'view/createcontent.php';
     }
 
     public function collectCreateContact()
@@ -119,15 +72,5 @@ class ContactsController
     {
         $contacts = $this->ContactsLogic->deleteContact($id);
         include "view/delete.php";
-    }
-
-    public function collectDeleteContent($id)
-    {
-        $contacts = $this->ContentsLogic->deleteContent($id);
-        include "view/delete.php";
-    }
-    public function openPOC()
-    {
-        include "view/poc.php";
     }
 }

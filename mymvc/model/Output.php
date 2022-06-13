@@ -58,10 +58,10 @@ class Output
         $html .= "<h1>$titel</h1>";
         $html .= "<p>$content</p>";
         $html .= "<h6>$datum</h6>";
-        $html .= "<a href='$sociallink' class='twitter-follow-button' data-show-count='false'>Follow</a><script async src='https://platform.twitter.com/widgets.js'' charset='utf-8'></script><br><br>";
+        $html .= "<a href='$sociallink' class='followbutton' target='_blank'>Follow</a><br><br>";
         $html .= "</div>";
         foreach ($img as $imglink){
-            $html .= '<img src=./view/assets/images/'.$imglink.'>';
+            $html .= '<img width="300px" height="400px" src=./view/assets/images/'.$imglink.' >';
         }
         $html .= "</div>";
         return $html;
