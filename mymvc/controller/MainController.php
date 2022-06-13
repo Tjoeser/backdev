@@ -19,14 +19,14 @@ class MainController
     {
         try {
             $controller = isset($_GET['controller']) ? $_GET['controller']:"";
-            // $op = isset($_GET['op']) ? $_GET['op'] : '';
+            $op = isset($_GET['op']) ? $_GET['op'] : '';
             switch ($controller)
             {
             case 'contacts':
                     $this->ContactsController->handleRequest();
                     break;
-            case 'contents' :
-                    $this->ContentsController->handleRequest($_GET['id']);
+            case 'content' :
+                    $this->ContentsController->handleRequest($op);
                     break;
             default:
                 $this->ContactsController->collectReadAllContacts();

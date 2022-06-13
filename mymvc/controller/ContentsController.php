@@ -17,18 +17,19 @@ class ContentsController
         // code
     }
 
-    public function handleRequest()
-    {
+    public function handleRequest($op)
+    {if (isset($_GET['id'])){
+        $id = $_GET['id'];
+        }   
         try {
-
-            $op = isset($_GET['op']) ? $_GET['op'] : '';
             switch ($op)
             {
             case 'createcontent':
                     $this->collectCreateContent();
                     break;
             case 'readcontent':
-                $this->collectReadContent($_GET['id']);
+                echo "readcontent";
+                $this->collectReadContent($id);
                 break;
             case 'updatecontent':
             case 'deletecontent':
@@ -53,7 +54,7 @@ class ContentsController
     public function collectReadContents()
     {
         $res = $this->ContentsLogic->readAllContent();
-        $content = $this->Output->createTable($res,"", "readcontent");
+        $content = $this->Output->createTable($res,"","content", "readcontent");
         $msg = "showing page {} of all pages";
         include 'view/choice.php';
     }

@@ -1,7 +1,6 @@
 <?php
 require_once 'model/ContactsLogic.php';
 require_once 'model/Output.php';
-require_once 'model/ContentsLogic.php';
 
 class ContactsController
 {
@@ -9,7 +8,6 @@ class ContactsController
     {
         $this->ContactsLogic = new ContactsLogic();
         $this->Output = new Output();
-        $this->ContentsLogic = new ContentsLogic();
     }
 
     public function __destruct()
@@ -52,7 +50,7 @@ class ContactsController
     public function collectReadAllContacts()
     {
         $res = $this->ContactsLogic->readAllContacts();
-        $contacts = $this->Output->createTable($res, "", "reads");
+        $contacts = $this->Output->createTable($res, "", "contacts","readscontacts");
         $msg = "showing page {} of all pages";
         include 'view/reads.php';
     }

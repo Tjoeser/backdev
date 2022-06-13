@@ -20,11 +20,11 @@
 </div>
 <div class="navbar">
   <a href="./index.php">Home</a>
-  <a href="index.php?op=choice">Read</a>
+  <a href="index.php?controller=content&op=choice">Read</a>
   <a href="index.php?op=poc">POC</a>
   <a href="#">Link</a>
-  <a class="pagebutton" href='index.php?op=create'>Create Contact</a>
-  <a href='index.php?op=createcontent' class='pagebutton'>Create Content</a>
+  <a class="pagebutton" href='index.php?controller=contacts&op=createcontacts'>Create Contact</a>
+  <a href='index.php?controller=contents&op=createcontents' class='pagebutton'>Create Content</a>
   <!-- <a href="index.php?op=choice" class="pagebutton">All content</a> -->
   <!-- <a href="index.php?op=readpost&id=2" class="pagebutton">Game of Thrones blog</a>
   <a href="index.php?op=readpost&id=3" class="pagebutton">Geronimo Stilton blog</a> -->
