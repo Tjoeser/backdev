@@ -68,31 +68,6 @@ class Output
         return $html;
     }
 
-    public function createBlog($content, $img)
-    {
-        $html = '<div>';
-        foreach ($content as $row) {
-            $html .= "<div>";
-            foreach ($row as $value ) {
-                $sociallink = $row['social'];
-                $auteur = $row['auteur'];
-                $titel = $row['titel'];
-                $content = $row['content'];
-                $datum = $row['datum'];
-                }
-            }
-        $html .= "<h5>$auteur</h5>";
-        $html .= "<h1>$titel</h1>";
-        $html .= "<p>$content</p>";
-        $html .= "<h6>$datum</h6>";
-        $html .= "<a href='$sociallink' class='followbutton' target='_blank'>Follow</a><br><br>";
-        $html .= "</div>";
-        foreach ($img as $imglink){
-            $html .= '<img width="300px" height="400px" src=./view/assets/images/'.$imglink.' >';
-        }
-        $html .= "</div>";
-        return $html;
-    }
 
     public function createlist($entries){
         $html = '<ul>';

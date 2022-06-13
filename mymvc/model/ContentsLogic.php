@@ -54,16 +54,6 @@ class ContentsLogic{
             throw $e;
         }
     }
-    
-    public function readContent($id)
-    {
-        echo "yesh!";
-        $sql = "SELECT id, auteur, titel, content, social, datum FROM content WHERE id=$id";
-        $result = $this->Datahandler->readsData($sql);
-        $res = $result->fetchAll();
-        $img = $this->readImages($id);
-        return [$res,$img];
-    }
 
     public function updateContent()
     {
