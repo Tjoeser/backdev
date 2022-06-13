@@ -18,34 +18,15 @@ class MainController
     public function handleRequest()
     {
         try {
-
-            $op = isset($_GET['op']) ? $_GET['op'] : '';
-            switch ($op)
+            $controller = isset($_GET['controller']) ? $_GET['controller']:"";
+            // $op = isset($_GET['op']) ? $_GET['op'] : '';
+            switch ($controller)
             {
-            case 'create':
-                    $this->ContactsController->collectCreateContact();
+            case 'contacts':
+                    $this->ContactsController->handleRequest();
                     break;
-            case 'reads' :
-                    $this->ContactsController->collectReadContact($_GET['id']);
-                    break;
-            case 'update':
-            case 'delete':
-                    $id = $_GET['id'];
-                    $this->ContactsController->collectDeleteContact($id);
-                    break;
-            case 'choice':
-                    $this->ContentsController->collectReadContents();
-                    break;
-            case 'createcontent':
-                    $this->ContentsController->collectCreateContent();
-                    break;
-            case 'readcontent':
-                $this->ContentsController->collectReadContent($_GET['id']);
-                break;
-            case 'updatecontent':
-            case 'deletecontent':
-                    $id = $_GET['id'];
-                    $this->ContentsController->collectDeleteContent($id);
+            case 'contents' :
+                    $this->ContentsController->handleRequest($_GET['id']);
                     break;
             default:
                 $this->ContactsController->collectReadAllContacts();
