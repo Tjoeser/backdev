@@ -31,6 +31,7 @@ class Output
         $html .= "<p>$content</p>";
         $html .= "<h6>$datum</h6>";
         $html .= "<a href='$sociallink' class='followbutton' >Follow</a>";
+        $html .= "<br><br>";
         $html .= "</div>";
         foreach ($img as $imglink){
             $html .= '<img src=./view/assets/images/'.$imglink.'>';

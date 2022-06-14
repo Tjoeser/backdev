@@ -25,6 +25,7 @@ class ContentsController
             switch ($op)
             {
             case 'createcontents':
+                echo "2";
                     $this->collectCreateContent();
                     break;
             case 'readcontent':
@@ -60,6 +61,7 @@ class ContentsController
 
     public function collectCreateContent()
     {
+        echo "3";
         echo "we zitten in de collectcreatecontent";
         $contacts = $this->ContentsLogic->createContent();
         include 'view/createcontent.php';

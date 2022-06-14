@@ -15,6 +15,7 @@ class ContentsLogic{
 
     public function createContent()
     {
+        echo "4";
         if (isset($_REQUEST['submit'])) {
             $auteur = $_REQUEST['auteur'];
             $titel = $_REQUEST['titel'];
