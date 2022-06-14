@@ -16,7 +16,7 @@ require 'header.php';
     <input type="submit" style="cursor:pointer" class="pagebutton" name="submit" value="Submit">
 </form>
 
-<a href='index.php' class="pagebutton"> Home</a>
+<a href='index.php?controller=contacts' class="pagebutton"> Home</a>
 
 <?php
 require 'footer.php';

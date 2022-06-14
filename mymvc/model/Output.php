@@ -34,7 +34,7 @@ class Output
         $html .= "<br><br>";
         $html .= "</div>";
         foreach ($img as $imglink){
-            $html .= '<img src=./view/assets/images/'.$imglink.'>';
+            $html .= '<img height=100px width=100px src=./view/assets/images/'.$imglink.'>';
         }
         $html .= "</div>";
         return $html;
@@ -59,10 +59,10 @@ class Output
             foreach ($row as $key => $value) {
                 $html .= "<td data-title='{$key}'>{$value}</td>";
             }
-            $html .= "<td><a class=\"crudfunctionbutton\" href='index.php?controller=".$controller."&op=".$direction."&id=" . $row['id'] .
-            "'><i class=\"fa-brands fa-readme\"></i> Read</a><a class=\"crudfunctionbutton\" href='index.php?controller=contents&op=update&id=" . $row['id'] .
-            "'><i class=\"fa-solid fa-pencil\"></i> Update</a><a class=\"crudfunctionbutton\" href='index.php?controller=contents&op=deletecontents&id=" . $row['id'] .
-            "'onclick=\"return confirm('Are you sure you want to delete?');\"><i class=\"fa-solid fa-trash-can\"></i> Delete</a></td>";
+            $html .= "<td>
+            <a class=\"crudfunctionbutton\" href='index.php?controller=".$controller."&op=".$direction."&id=" . $row['id'] ."'><i class=\"fa-brands fa-readme\"></i> Read</a>
+            <a class=\"crudfunctionbutton\" href='index.php?controller=".$controller."&op=".$direction."&id=" . $row['id'] ."'><i class=\"fa-solid fa-pencil\"></i> Update</a>
+            <a class=\"crudfunctionbutton\" href='index.php?controller=".$controller."&op=".$direction."&id=" . $row['id'] ."'onclick=\"return confirm('Are you sure you want to delete?');\"><i class=\"fa-solid fa-trash-can\"></i> Delete</a></td>";
             $html .= "</tr>";
         }
         $html .= "</table>";

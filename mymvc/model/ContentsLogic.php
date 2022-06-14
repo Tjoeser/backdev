@@ -15,7 +15,7 @@ class ContentsLogic{
 
     public function createContent()
     {
-        echo "4";
+        echo "yashi ";
         if (isset($_REQUEST['submit'])) {
             $auteur = $_REQUEST['auteur'];
             $titel = $_REQUEST['titel'];
@@ -23,7 +23,7 @@ class ContentsLogic{
             $content = $_REQUEST['content'];
             $social = $_REQUEST['social'];
             $datum = $_REQUEST['datum'];
-            // $this->saveImages($images);
+            $this->saveImages($images);
             if (empty($auteur) or empty($titel) or empty($images) or empty($content)or empty($social) or empty($datum)) {
                 return "Alle velden zijn vereist";
             } else {
@@ -94,8 +94,36 @@ class ContentsLogic{
     }
 
     public function saveImages($img){
-        define('DIRECTORY', '/view/assets/images');
-        file_put_contents(DIRECTORY . $img, "");
+        $afbeeldingenmap = "../view/assets/images/";
+        $afbeelding = $afbeeldingenmap . basename($img);
+        $uploadOk = 1;
+    
+    // Check of het een echte afbeelding is
+    //check of er een afbeelding er (goed) is 
+        // $check = getimagesize($img);
+        // if($check == true) {
+        //     echo "File is an image - " . $check["mime"] . ".";
+        //     $uploadOk = 1;
+        // } else {
+        //     echo "File is not an image.";
+        //     $uploadOk = 0;
+        // }
+
+        //verplaats afbeelding naar media
+        // Check if $uploadOk is set to 0 by an error
+        if ($uploadOk == 0) {
+            echo "Sorry, your file was not uploaded.";
+            // if everything is ok, try to upload file
+                } else {
+                if (move_uploaded_file($img["tmp_name"], $afbeelding)) {
+                    echo "The file ". htmlspecialchars(basename($img["name"])). " has been uploaded.";
+                } else {
+                    echo "Sorry, there was an error uploading your file.";
+                }
+                    }
+        //samenstellen van de gegevens in een deel HTM
+
+        // het html resultaat opslaan in alleopdrachten.php
     }
 }
 ?>

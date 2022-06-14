@@ -23,7 +23,6 @@ class ContactsController
             switch ($op)
             {
             case 'createcontacts':
-                    echo "2";
                     $this->collectCreateContact();
                     break;
             case 'readscontacts' :

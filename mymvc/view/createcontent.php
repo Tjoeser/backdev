@@ -4,7 +4,7 @@ require 'header.php';
 
 <h1>Make new content</h1>
 
-<form action="index.php?op=createcontent" method="post">
+<form action="index.php?controller=content&op=createcontents" method="post">
     <label for="auteur">Auteur:</label><br>
     <input type="text" id="auteur" name="auteur" value="" ><br><br>
     <label for="titel">Titel:</label><br>
@@ -20,7 +20,7 @@ require 'header.php';
     <input type="submit" style="cursor:pointer" class="pagebutton" name="submit" value="Submit">
 </form>
 
-<a href='index.php' class="pagebutton"> Home</a>
+<a href='index.php?controller=content' class="pagebutton"> Home</a>
 
 <?php
 require 'footer.php';

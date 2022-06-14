@@ -26,7 +26,6 @@ class MainController
                     $this->ContactsController->handleRequest($op);
                     break;
             case 'content' :
-                echo "1";
                     $this->ContentsController->handleRequest($op);
                     break;
             default:
