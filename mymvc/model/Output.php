@@ -38,7 +38,7 @@ class Output
         $html .= "</div>";
         return $html;
     }
-    
+
     public function createTable($entries, $ftable, $controller, $direction)
     {
         $tableheader = false;

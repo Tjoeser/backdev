@@ -20,15 +20,14 @@ class ContentsController
     public function handleRequest($op)
     {if (isset($_GET['id'])){
         $id = $_GET['id'];
-        }   
+        }
         try {
             switch ($op)
             {
-            case 'createcontent':
+            case 'createcontents':
                     $this->collectCreateContent();
                     break;
             case 'readcontent':
-                echo "readcontent";
                 $this->collectReadContent($id);
                 break;
             case 'updatecontent':

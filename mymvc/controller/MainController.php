@@ -23,7 +23,7 @@ class MainController
             switch ($controller)
             {
             case 'contacts':
-                    $this->ContactsController->handleRequest();
+                    $this->ContactsController->handleRequest($op);
                     break;
             case 'content' :
                     $this->ContentsController->handleRequest($op);
