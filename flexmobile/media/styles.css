@@ -19,9 +19,35 @@ section{
     text-align: center;
 }
 
+@media (max-width: 800px) {
+    .container{
+      flex-direction: column;
+    }
+}
+
 .container {
     display: flex;
-    gap: 30;
-    row-gap: 10px;
-    column-gap: 20px;
+    flex-direction: row;
+    font-size: 30px;
+    text-align: center;
+}
+.item1{
+    background-color: dodgerblue;
+    padding: 10px;
+    flex: 25%;
+}
+.item2{
+    background-color: dodgerblue;
+    padding: 10px;
+    flex: 25%;
+}
+.item3{
+    background-color: dodgerblue;
+    padding: 10px;
+    flex: 25%;
+}
+.item4{
+    background-color: dodgerblue;
+    padding: 10px;
+    flex: 25%;
 }
