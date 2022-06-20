@@ -1,0 +1,27 @@
+main{
+    background-color: pink;
+}
+article{
+    background-color: aliceblue;
+}
+header{
+    background-color: aquamarine;
+    text-align: center;
+}
+
+footer{
+    background-color: aquamarine;
+    text-align: center;
+}
+
+section{
+    background-color: bisque;
+    text-align: center;
+}
+
+.container {
+    display: flex;
+    gap: 30;
+    row-gap: 10px;
+    column-gap: 20px;
+}
