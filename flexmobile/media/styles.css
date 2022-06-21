@@ -21,8 +21,9 @@ section{
 
 .row {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap:wrap;
     padding: 0 4px;
+    flex-direction: row;
 }
 
 /* Create four equal columns that sits next to each other */
@@ -34,8 +35,9 @@ section{
 
 .row1 {
     display: flex;
-    flex-wrap: wrap;
     padding: 0 4px;
+    flex-wrap: wrap-reverse;
+    flex-direction: row;
 }
 
 
